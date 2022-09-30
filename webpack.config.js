@@ -8,8 +8,17 @@ module.exports = {
         path: path.join(__dirname, "/build"),
         filename: "bundle.[contenthash].js",
         clean: true,
+        publicPath:'/'
     },
     devtool: "source-map",
+    devServer:{
+        historyApiFallback:true,
+        port:3090,
+        // inline:true,
+        // hot:true,
+        // devtool:'eval',
+        // contentBase:'app/ui/www'
+    },
     module: {
         rules: [
             {

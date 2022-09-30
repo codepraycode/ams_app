@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 
 import { signInUrl, signUpUrl, homeUrl } from "./constants/app_urls";
 
-import Dashboard from './screens/Dashboard.jsx';
-import SignIn from "./screens/SignIn.jsx";
-import SignUp from "./screens/SignUp.jsx";
+import Dashboard from './pages/Dashboard.jsx';
+import SignIn from "./pages/SignIn.jsx";
+import SignUp from "./pages/SignUp.jsx";
 
 
 const AppRoutes = ()=>{
