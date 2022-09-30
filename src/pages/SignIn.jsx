@@ -1,12 +1,12 @@
 import React from 'react'
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <>
       <div>Navbar</div>
 
       <section>Hero</section>
-
+      
       <section>Form</section>
 
       <footer>Footer</footer>
@@ -15,4 +15,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignUp
