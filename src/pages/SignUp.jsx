@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { signInUrl, signUpUrl } from '../constants/app_urls';
 
@@ -36,7 +36,13 @@ const SignInForm = () =>{
 
       <Button label={"SIGN UP"}/>
 
-      <p className="text-sm mt-3 mb-0">Already have an account? <a href="/" className="text-dark font-weight-bolder">Sign in</a></p>
+      <p className="text-sm mt-3 mb-0">
+        Already have an account?  <Link 
+            to={signInUrl} 
+            className="text-dark font-weight-bolder">
+              Sign in
+        </Link>
+      </p>
 
     </Form>
   )
@@ -44,6 +50,20 @@ const SignInForm = () =>{
 
 
 const SignIn = () => {
+
+
+  useEffect(()=>{
+    const body = document.querySelector('body')
+
+    // console.log(body.classList)
+    body.classList.add("bg-gray-100");
+
+    return ()=>{
+      body.classList.remove("bg-gray-100")
+    }
+  })
+
+
   return (
     <>
       
