@@ -13,6 +13,7 @@
     padding: 2px 0;
     border: 1px solid $gray-200;
     border-radius: 5px;
+    
     input{
         display: none;
     }
@@ -54,6 +55,7 @@
                 padding: 8px 15px;
                 border-radius: 10px;
                 cursor: pointer;
+                transition: all ease 0.3s;
                 &.up{
                     background-color: lighten($color: $accent, $amount: 50%);
                     &.disabled{
@@ -66,7 +68,7 @@
                     }
                 }
                 &.del{
-                    background-color: lighten($color: $red, $amount: 10%);
+                    background-color: lighten($color: $red, $amount: 34%);
                     color: $gray-100;
                     &.disabled {
                             cursor: not-allowed;
@@ -83,6 +85,94 @@
     
 }
 
+.form-group{
+    display: flex;
+    flex-direction: column-reverse;
+
+    margin: 30px 0;
+
+    input[required]+label {
+        position: relative;
+        // background: red;
+        width: fit-content;
+        &::after{
+            content: '*';
+            font-size: $small+3;
+            position: absolute;
+            right: -15px;
+            top: -5px;
+            color: $red;
+        }
+    }
+}
+
+.form-control{
+    box-shadow: none;
+    border-radius: 3px;
+
+   
+    &:focus{
+        box-shadow: none;
+    }
+
+}
+
+.form_pager{
+    // background-color: red;
+    // width: 600px;
+    // max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+        counter-reset: myCounter;
+
+        li{
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid $gray-300;
+            background-color: $white;
+            position: relative;
+            counter-increment: myCounter;
+            
+            &::before{
+                content: '';
+                position: absolute;
+                left: -150%;
+                top: 50%;
+                height: 1px;
+                width: 400%;
+                background-color: $gray-200;
+                z-index: -1 !important;
+            }
+
+            &::after{
+                content: counter(myCounter);
+                position: absolute;
+                
+                color: $gray-500;
+                transform: translate(220%, 50%);
+            }
+        }
+    }
+}
+
+
+.error{
+    display: block;
+    margin: 5px 0;
+    text-align: center;
+    color: $red;
+    font-weight: bold;
+    font-size: $small;
+}
 
 @media (max-width:780px){
     .img_uploader {

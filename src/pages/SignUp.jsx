@@ -12,6 +12,7 @@ import Button from '../widgets/Button';
 
 import { associationSignUpFormConfig } from '../constants/form_configs';
 import FileUpload from '../widgets/FileUpload';
+import Pager from '../widgets/Pager';
 
 
 
@@ -26,24 +27,18 @@ const SignInForm = () =>{
       <Input inputProps={associationSignUpFormConfig.name}/>
 
 
-      <Checkbox 
+      {/* <Checkbox 
         label={
           <>
             I agree the <a href="/" className="text-dark font-weight-bolder">Terms and Conditions</a>
           </>
         }
-      />
+      /> */}
 
 
-      <Button label={"SIGN UP"}/>
+      <Button label={"Next"}/>
 
-      <p className="text-sm mt-3 mb-0">
-        Already have an account?  <Link 
-            to={signInUrl} 
-            className="text-dark font-weight-bolder">
-              Sign in
-        </Link>
-      </p>
+      
 
     </Form>
   )
@@ -100,37 +95,24 @@ const SignIn = () => {
                   <h5>Create account</h5>
                 </div>
 
-                <div className="row px-xl-5 px-sm-4 px-3">
+                <Pager row={3}/>
 
-                  <div className="col-3 ms-auto px-1">
-                    <a className="btn btn-outline-light w-100" href="/">
-                      
-                    </a>
-                  </div>
-                  
-                  <div className="col-3 px-1">
-                    <a className="btn btn-outline-light w-100" href="/">
-                      
-                    </a>
-                  </div>
+                <p className="error">
+                  {null}
+                </p>
 
-                  <div className="col-3 me-auto px-1">
-                    <a className="btn btn-outline-light w-100" href="/">
-                      
-                    </a>
-                  </div>
-
-                  <div className=" position-relative text-center">
-                    <p className="text-sm font-weight-bold mb-1 text-danger text-border d-inline z-index-2 bg-white px-3">
-                      or
-                    </p>
-                  </div>
-
-                </div>
-
-                <div className="card-body">
+                <div className="card-body mt-0">
 
                   <SignInForm/>
+
+
+                  <p className="text-sm mt-3 mb-0">
+                    Already have an account?  <Link
+                      to={signInUrl}
+                      className="text-dark font-weight-bolder">
+                      Sign in
+                    </Link>
+                  </p>
 
                 </div>
                 
@@ -138,6 +120,7 @@ const SignIn = () => {
             </div>
           </div>
         </div>
+
       </section>
 
       <footer className="footer py-2">

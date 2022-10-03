@@ -12,6 +12,7 @@ const associationSignUpFormConfig = {
         name: "association_reg_id",
         placeholder: "Association registration id",
         required:true,
+        label:"Registration ID"
     },
 
     name:{
@@ -19,6 +20,7 @@ const associationSignUpFormConfig = {
         name:"name",
         placeholder:"Association name",
         required:true,
+        label: "Association name"
     },
     
     contact:{
@@ -58,6 +60,7 @@ const associationSignUpFormConfig = {
         name: "email",
         placeholder: "Association official email",
         required: true,
+        label: "Association email"
     },
     password: {
         type: "password",

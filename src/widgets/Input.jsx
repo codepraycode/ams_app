@@ -3,7 +3,7 @@ import React from 'react'
 const Input = ({inputProps, wrapperProps}) => {
 
     const pprops = {
-        className: "mb-3",
+      className: "form-group",
         ...wrapperProps
     }
 
@@ -12,22 +12,16 @@ const Input = ({inputProps, wrapperProps}) => {
         className:"form-control",
         ...inputProps,
     }
-  return (
-    <>
-      {inputProps.label && <label>{inputProps.label}</label>}
+
+    return (
       <div {...pprops}>
 
-        <input
-          type="text"
-          placeholder="Name"
-          aria-label="Name"
-          aria-describedby="email-addon"
-          {...inpProps}
-        />
+        <input {...inpProps} />
+        {inputProps.label && <label>{inputProps.label}</label>}
+
       </div>
-    </>
-      
-  )
+        
+    )
 }
 
 export default Input
