@@ -19,6 +19,9 @@ module.exports = {
         // devtool:'eval',
         // contentBase:'app/ui/www'
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
     module: {
         rules: [
             {

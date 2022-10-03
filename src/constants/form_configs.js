@@ -2,7 +2,7 @@
 
 const associationSignUpFormConfig = {
     logo:{
-        type:"file",
+        type:"image",
         accept:".png .jpg .jpeg",
         name:"logo",
         required:true,

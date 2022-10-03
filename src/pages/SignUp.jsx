@@ -5,19 +5,20 @@ import { signInUrl, signUpUrl } from '../constants/app_urls';
 import { curve1 } from '../constants/assets';
 
 
-import Input from '../widgets/Input.jsx';
-import Form from '../widgets/Form.jsx';
-import Checkbox from '../widgets/Checkbox.jsx';
-import Button from '../widgets/Button.jsx';
+import Input from '../widgets/Input';
+import Form from '../widgets/Form';
+import Checkbox from '../widgets/Checkbox';
+import Button from '../widgets/Button';
 
 import { associationSignUpFormConfig } from '../constants/form_configs';
+import FileUpload from '../widgets/FileUpload';
 
 
 
 const SignInForm = () =>{
   return (
     <Form className="form text-left">
-      <Input 
+      <FileUpload 
         inputProps={associationSignUpFormConfig.logo}
       />
 
@@ -66,24 +67,6 @@ const SignIn = () => {
 
   return (
     <>
-      
-      {/* <nav className="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent mt-4">
-        <div className="container d-flex align-items-center justify-content-between">
-          
-          <a className="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="/">
-            Associtaion Management System
-          </a>
-
-          
-          <ul className="navbar-nav d-lg-block d-none">
-            <li className="nav-item">
-              <a href="/" className="btn btn-sm btn-round mb-0 me-1 bg-gradient-light">Login</a>
-            </li>
-          </ul>
-
-        </div>
-      </nav> */}
-
 
       <section className="h-100-vh mb-8">
         <div 

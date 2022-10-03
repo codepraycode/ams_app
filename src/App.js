@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from 'react-router-dom';
-// import "./scss/ams_styles.scss";
+import "./scss/index.scss";
 import AppRoutes from './routes';
 
 import ErrorBoundary from "./errors/ErrorBoundary.jsx";
