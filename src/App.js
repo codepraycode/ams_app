@@ -3,11 +3,15 @@ import { BrowserRouter } from 'react-router-dom';
 // import "./scss/ams_styles.scss";
 import AppRoutes from './routes';
 
+import ErrorBoundary from "./errors/ErrorBoundary.jsx";
+
 const App = () => {
     return (
-        <BrowserRouter>
-            <AppRoutes/>
-        </BrowserRouter>
+        <ErrorBoundary>
+            <BrowserRouter>
+                <AppRoutes/>
+            </BrowserRouter>
+        </ErrorBoundary>
     );
 };
 
