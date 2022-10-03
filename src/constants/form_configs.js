@@ -80,12 +80,14 @@ const associationSignInFormConfig = {
     email: {
         type: "email",
         name: "email",
+        label:"Email",
         placeholder: "Association official email",
         required: true,
     },
     password: {
         type: "password",
         name: "password",
+        label: "Password",
         placeholder: "Password",
         required: true,
     },

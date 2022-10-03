@@ -13,14 +13,14 @@ import ToggleSwitch from '../widgets/ToggleSwitch.jsx';
 
 const SignUpForm = () => {
   return (
-    <Form className="form text-left">
+    <Form classNameName="form text-left">
 
-      {associationSignInFormConfig.email.label && <label>{associationSignInFormConfig.email.label}</label>}
+      {/* {associationSignInFormConfig.email.label && <label>{associationSignInFormConfig.email.label}</label>} */}
       <Input
         inputProps={associationSignInFormConfig.email}
       />
 
-      {associationSignInFormConfig.password.label && <label>{associationSignInFormConfig.password.label}</label>}
+      {/* {associationSignInFormConfig.password.label && <label>{associationSignInFormConfig.password.label}</label>} */}
       <Input inputProps={associationSignInFormConfig.password} />
       
 
@@ -30,12 +30,12 @@ const SignUpForm = () => {
       />
 
 
-      <Button label={"SIGN IN"} class="btn bg-gradient-info w-100 mt-4 mb-0" />
+      <Button label={"SIGN IN"} className="btn bg-gradient-info w-100 mt-4 mb-0" />
 
       <p className="text-sm mt-3 mb-0">
         Don't have an account?  <Link
           to={signUpUrl}
-          class="text-info text-gradient font-weight-bold">
+          className="text-info text-gradient font-weight-bold">
           Sign up
         </Link>
       </p>
@@ -49,33 +49,33 @@ const SignUp = () => {
   useEffect(() => {
     const body = document.querySelector('body')
 
-    // console.log(body.classList)
+    // console.log(body.classNameList)
     body.classList.add("bg-white");
 
     return () => {
-      body.classList.remove("bg-white")
+      body.classNameList.remove("bg-white")
     }
   })
 
   return (
     <>
       <section >
-        <div class="page-header section-height-100">
-          <div class="container">
+        <div className="page-header section-height-100">
+          <div className="container">
             
-            <div class="row">
+            <div className="row">
               
-              <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+              <div className="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                 
-                <div class="card card-plain mt-2">
-                  <div class="card-header pb-0 text-left bg-transparent">
-                    <h3 class="font-weight-bolder text-info text-gradient text-center mb-5">Association Management System</h3>
-                    <h4 class="font-weight-bolde">Welcome back</h4>
+                <div className="card card-plain mt-2">
+                  <div className="card-header pb-0 text-left bg-transparent">
+                    <h3 className="font-weight-bolder text-info text-gradient text-center mb-5">Association Management System</h3>
+                    <h4 className="font-weight-bolde">Welcome back</h4>
 
-                    <p class="mb-0">Enter your email and password to sign in</p>
+                    <p className="mb-0">Enter your email and password to sign in</p>
                   </div>
 
-                  <div class="card-body">
+                  <div className="card-body">
 
                     <SignUpForm />
 
@@ -84,10 +84,10 @@ const SignUp = () => {
                 </div>
               </div>
 
-              <div class="col-md-6">
-                <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+              <div className="col-md-6">
+                <div className="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
                   <div 
-                    class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" 
+                    className="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" 
                     style={{backgroundImage: `url(${curve2})` }}></div>
                 </div>
               </div>

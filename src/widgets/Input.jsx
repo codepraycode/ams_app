@@ -13,15 +13,20 @@ const Input = ({inputProps, wrapperProps}) => {
         ...inputProps,
     }
   return (
+    <>
+      {inputProps.label && <label>{inputProps.label}</label>}
       <div {...pprops}>
-        <input 
-            type="text" 
-            placeholder="Name" 
-            aria-label="Name" 
-            aria-describedby="email-addon" 
-              {...inpProps}
+
+        <input
+          type="text"
+          placeholder="Name"
+          aria-label="Name"
+          aria-describedby="email-addon"
+          {...inpProps}
         />
       </div>
+    </>
+      
   )
 }
 
