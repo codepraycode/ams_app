@@ -53,7 +53,7 @@ const SignUp = () => {
     body.classList.add("bg-white");
 
     return () => {
-      body.classNameList.remove("bg-white")
+      body.classList.remove("bg-white")
     }
   })
 
