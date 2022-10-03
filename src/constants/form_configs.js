@@ -5,7 +5,7 @@ const associationSignUpFormConfig = {
         type:"image",
         accept:".png .jpg .jpeg",
         name:"logo",
-        required:true,
+        // required:true,
     },
     association_reg_id:{
         type: "text",

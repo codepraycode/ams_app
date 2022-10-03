@@ -21,8 +21,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100px;
-        height: 100%;
+        width: 80px;
+        height: 80px;
         background-color: $gray-200;
         border-radius: 50%;
         padding: 5px;
@@ -109,7 +109,8 @@
 .form-control{
     box-shadow: none;
     border-radius: 3px;
-
+    font-size: $small;
+    
    
     &:focus{
         box-shadow: none;
@@ -184,6 +185,12 @@ footer{
     align-items: center;
     justify-content: space-evenly;
     row-gap: 10px;
+
+    a {
+            color: $gray-500;
+            display: block;
+            position: relative;
+        }
     
 
     .links{
@@ -193,9 +200,9 @@ footer{
         column-gap: 25px;
         justify-content: center;
         a{
-            color: $gray-500;
-            display: block;
-            position: relative;
+            // color: $gray-500;
+            // display: block;
+            // position: relative;
             // 
             &::after{
                 content: "·";

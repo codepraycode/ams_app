@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import { signUpUrl } from '../constants/app_urls';
+import { Link, useNavigate } from 'react-router-dom';
+import { homeUrl, signUpUrl } from '../constants/app_urls';
 import { curve2 } from '../constants/assets';
 import { associationSignInFormConfig } from '../constants/form_configs';
 
@@ -12,15 +12,14 @@ import Button from '../widgets/Button.jsx';
 import ToggleSwitch from '../widgets/ToggleSwitch.jsx';
 
 const SignUpForm = () => {
+  const navigate = useNavigate();
   return (
-    <Form classNameName="form text-left">
+    <Form className="form text-left" onSubmit={(e) => { e.preventDefault(); navigate(homeUrl) }}>
 
-      {/* {associationSignInFormConfig.email.label && <label>{associationSignInFormConfig.email.label}</label>} */}
       <Input
         inputProps={associationSignInFormConfig.email}
       />
 
-      {/* {associationSignInFormConfig.password.label && <label>{associationSignInFormConfig.password.label}</label>} */}
       <Input inputProps={associationSignInFormConfig.password} />
       
 
@@ -30,7 +29,7 @@ const SignUpForm = () => {
       />
 
 
-      <Button label={"SIGN IN"} className="btn bg-gradient-info w-100 mt-4 mb-0" />
+      <Button label={"SIGN IN"} type={"submit"} className="btn bg-gradient-info w-100 mt-4 mb-0" />
 
       <p className="text-sm mt-3 mb-0">
         Don't have an account?  <Link
@@ -67,21 +66,26 @@ const SignUp = () => {
               
               <div className="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                 
-                <div className="card card-plain mt-2">
-                  <div className="card-header pb-0 text-left bg-transparent">
-                    <h3 className="font-weight-bolder text-info text-gradient text-center mb-5">Association Management System</h3>
-                    <h4 className="font-weight-bolde">Welcome back</h4>
+                <div className="card card-plain">
+
+                  <div className="card-header  py-0  my-0 text-left bg-transparent">
+                    <h3 className="font-weight-bolder text-info text-gradient text-center mb-2">
+                      Association Management System
+                    </h3>
+
+                    <h4 className="font-weight-bolder">Welcome back</h4>
 
                     <p className="mb-0">Enter your email and password to sign in</p>
                   </div>
 
-                  <div className="card-body">
+                  <div className="card-body py-0">
 
                     <SignUpForm />
 
                   </div>
 
                 </div>
+
               </div>
 
               <div className="col-md-6">

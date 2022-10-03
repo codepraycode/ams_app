@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import { signInUrl, signUpUrl } from '../constants/app_urls';
+import { Link, useNavigate } from 'react-router-dom';
+import { signInUrl } from '../constants/app_urls';
 
 import { curve1 } from '../constants/assets';
 
@@ -18,8 +18,9 @@ import Footer from '../components/Footer';
 
 
 const SignInForm = () =>{
+  const navigate = useNavigate();
   return (
-    <Form className="form text-left">
+    <Form className="form text-left" onSubmit={(e)=>{e.preventDefault(); navigate(signInUrl)}}>
       <FileUpload 
         inputProps={associationSignUpFormConfig.logo}
       />
@@ -37,7 +38,7 @@ const SignInForm = () =>{
       /> */}
 
 
-      <Button label={"Next"}/>
+      <Button type="submit" label={"Next"}/>
 
       
 

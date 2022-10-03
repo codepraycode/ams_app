@@ -29,12 +29,12 @@ function Footer() {
               <a href="/" target="_blank" className="text-secondary me-xl-4 me-4">
                   <span className="text-lg fab fa-instagram"></span>
               </a>
-              <a href="/" target="_blank" className="text-secondary me-xl-4 me-4">
+              {/* <a href="/" target="_blank" className="text-secondary me-xl-4 me-4">
                   <span className="text-lg fab fa-pinterest"></span>
               </a>
               <a href="/" target="_blank" className="text-secondary me-xl-4 me-4">
                   <span className="text-lg fab fa-github"></span>
-              </a>
+              </a> */}
           </div>
 
 

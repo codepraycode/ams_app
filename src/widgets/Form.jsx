@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Form = ({children}) => {
+const Form = ({children, ...rest}) => {
   return (
-    <form>
+    <form {...rest}>
         {children}
     </form>
   )
