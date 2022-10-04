@@ -11,39 +11,6 @@ import Form from '../widgets/Form.jsx';
 import Button from '../widgets/Button.jsx';
 import ToggleSwitch from '../widgets/ToggleSwitch.jsx';
 
-const SignUpForm = () => {
-  const navigate = useNavigate();
-  return (
-    <Form className="form text-left" onSubmit={(e) => { e.preventDefault(); navigate(homeUrl) }}>
-
-      <Input
-        inputProps={associationSignInFormConfig.email}
-      />
-
-      <Input inputProps={associationSignInFormConfig.password} />
-      
-
-
-      <ToggleSwitch
-        label={ "Remeber me" }
-      />
-
-
-      <Button label={"SIGN IN"} type={"submit"} className="btn bg-gradient-info w-100 mt-4 mb-0" />
-
-      <p className="text-sm mt-3 mb-0">
-        Don't have an account?  <Link
-          to={signUpUrl}
-          className="text-info text-gradient font-weight-bold">
-          Sign up
-        </Link>
-      </p>
-
-    </Form>
-  )
-}
-
-
 const SignUp = () => {
   useEffect(() => {
     const body = document.querySelector('body')
@@ -58,48 +25,44 @@ const SignUp = () => {
 
   return (
     <>
-      <section >
-        <div className="page-header section-height-100">
-          <div className="container">
-            
-            <div className="row">
-              
-              <div className="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
-                
-                <div className="card card-plain">
+      <div className="header">
 
-                  <div className="card-header  py-0  my-0 text-left bg-transparent">
-                    <h3 className="font-weight-bolder text-info text-gradient text-center mb-2">
-                      Association Management System
-                    </h3>
+        <h4>Login to association account</h4>
+      </div>
 
-                    <h4 className="font-weight-bolder">Welcome back</h4>
 
-                    <p className="mb-0">Enter your email and password to sign in</p>
-                  </div>
 
-                  <div className="card-body py-0">
+      <Form className="form text-left" onSubmit={(e) => { e.preventDefault(); navigate(homeUrl) }}>
 
-                    <SignUpForm />
+        <Input
+          inputProps={associationSignInFormConfig.email}
+        />
 
-                  </div>
+        <Input inputProps={associationSignInFormConfig.password} />
 
-                </div>
 
-              </div>
 
-              <div className="col-md-6">
-                <div className="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-                  <div 
-                    className="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" 
-                    style={{backgroundImage: `url(${curve2})` }}></div>
-                </div>
-              </div>
+        <ToggleSwitch
+          wrapperProps={{ className:"mb-2"}}
+          label={"Remeber me"}
+        />
 
-            </div>
-          </div>
-        </div>
-      </section>
+
+        <Button
+          className="btn btn-lg "
+          type="submit" label={"Sign In"}
+        />
+
+      </Form>
+
+      <span className='cta'>
+        Don't have an account?  <Link
+          to={signUpUrl}
+          className="text-info text-gradient font-weight-bold">
+          Sign up
+        </Link>
+      </span>
+
 
 
     </>

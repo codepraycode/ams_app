@@ -1,0 +1,349 @@
+@import './variables';
+
+*{
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body{
+    background-color: $gray-200;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.auth_content{
+    background-color: $white;
+
+    width: 400px;
+    max-width: 90%;
+    margin: 30px auto;
+
+    padding: 20px 30px;
+
+    .header{
+        h4{
+            color: $gray-600;
+            font-weight: 400;
+        }
+    }
+
+    & > .cta{
+        display: block;
+        
+        text-align: center;
+        margin-top: 20px;
+        font-size: $small+3;
+        color: $gray-800;
+
+        a{
+            margin-left: 10px;
+            font-weight: bold;
+        }
+    }
+    
+}
+
+.brand{
+    font-size: $extraLarge+10;
+    color: $primary;
+    margin: 20px 0;
+}
+.img_uploader {
+
+    height: 100px;
+    max-width: 100%;
+    // 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // column-gap: 5px;
+    padding: 2px 0;
+    border: 1px solid $gray-200;
+    border-radius: 5px;
+
+    input {
+        display: none;
+    }
+
+    .preview {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background-color: $gray-200;
+        border-radius: 50%;
+        padding: 5px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .upload_action {
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        justify-content: center;
+
+        span.msg {
+            font-size: $small;
+            font-style: italic;
+            color: $gray-400;
+            margin: 15px 0;
+        }
+
+        & .cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            span {
+                font-size: $small;
+                // background: red;
+                padding: 8px 15px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all ease 0.3s;
+
+                &.up {
+                    background-color: lighten($color: $accent, $amount: 50%);
+
+                    &.disabled {
+                        cursor: not-allowed;
+                        color: $gray-500;
+                    }
+
+                    &:not(.disabled):hover {
+                        background-color: $primary;
+                        color: $white;
+                    }
+                }
+
+                &.del {
+                    background-color: lighten($color: $red, $amount: 34%);
+                    color: $gray-100;
+
+                    &.disabled {
+                        cursor: not-allowed;
+                        background-color: lighten($color: $red, $amount: 18%);
+                    }
+
+                    &:not(.disabled):hover {
+                        background-color: $red;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column-reverse;
+    
+
+    margin: 30px 0;
+    label{
+        font-weight: 600;
+        font-size: $small+2;
+        margin-bottom: 10px;
+        margin-left: 5px;
+    }
+
+    input[required]+label {
+        position: relative;
+        // background: red;
+        width: fit-content;
+        
+
+        &::after {
+            content: '*';
+            font-size: $small+3;
+            position: absolute;
+            right: -15px;
+            top: -5px;
+            color: $red;
+        }
+    }
+}
+
+.form-control {
+    box-shadow: none;
+    // border-radius: 3px;
+    font-size: $small;
+
+    padding: 15px  25px;
+    border: 1px solid $gray-300;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $gray-800;
+    &::placeholder{
+        color: $gray-500;
+    }
+
+    outline: none;
+
+    transition: all ease-out 0.3s;
+    
+
+
+    &:focus {
+        box-shadow: none;
+        outline: 1px solid $gray-300;
+        // outline-width: 1;
+        // outline-style: solid;
+        // outline-color: $gray-400;
+    }
+
+}
+
+.form_pager {
+    // 
+    // width: 600px;
+    // max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+        counter-reset: myCounter;
+
+        li {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid $gray-300;
+            background-color: $white;
+            position: relative;
+            counter-increment: myCounter;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -150%;
+                top: 50%;
+                height: 1px;
+                width: 400%;
+                background-color: $gray-200;
+                z-index: -1 !important;
+            }
+
+            &::after {
+                content: counter(myCounter);
+                position: absolute;
+
+                color: $gray-500;
+                transform: translate(220%, 50%);
+            }
+        }
+    }
+}
+
+.error {
+    display: block;
+    margin: 5px 0;
+    text-align: center;
+    color: $red;
+    font-weight: bold;
+    font-size: $small;
+}
+
+.btn {
+    font-size: $small;
+    line-height: 1;
+    font-weight: 600;
+    border-radius: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 15px ;
+    cursor: pointer;
+
+    border: 0;
+
+    transition: all ease-in-out 0.3s;
+
+    i {
+        font-size: 1rem;
+    }
+
+
+    &.btn-sm {
+        font-size: $small;
+    }
+
+    &.btn-lg {
+        font-size: $small+5;
+        background-color: $primary;
+        color: $white;
+        border-radius: 8px;
+
+        display: block;
+        width: 80%;
+        margin: 5px auto;
+        padding: 10px 0;
+
+        &:hover{
+            background-color: lighten($color: $primary, $amount: 10%);
+        }
+    }
+
+    &.btn-xs {
+        padding: $small $small;
+        font-size: $small;
+    }
+
+    /* Buttons with only icons */
+    &.btn-icon {
+        width: 31px;
+        height: 31px;
+        padding: 0;
+    }
+
+    /* Buttons with icon and text */
+    &.btn-icon-text {
+        .btn-icon-prepend {
+            margin-right: .5rem;
+        }
+
+        .btn-icon-append {
+            margin-left: .5rem;
+        }
+    }
+
+    &.btn-social-icon {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+    }
+}
+
+a{
+    text-decoration: none;
+    font-size: $small+3;
+    color: $primary;
+}
+
+
+.mt{
+    &-2{
+        margin-top: 20px;
+    }
+}
+
+.mb{
+    &-2 {
+        margin-bottom: 20px;
+    }
+}

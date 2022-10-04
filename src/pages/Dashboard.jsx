@@ -1,14 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import Navbar from '../components/Navbar';
+import SideBar from '../components/SideBar';
+
+
 
 const Dashboard = () => {
-  return (
-    <div>
-      Dashboard
+  useEffect(() => {
+    const body = document.querySelector('body')
 
-      <Link to="signin">Signin</Link>
-      <Link to="signup">Signup</Link>
-    </div>
+    // console.log(body.classNameList)
+    body.classList.add("bg-gray-100");
+
+    return () => {
+      body.classList.remove("bg-gray-100")
+    }
+  })
+
+
+  return (
+    <>
+
+      {/* <SideBar/> */}
+
+      <main>
+
+        <Navbar/>
+
+        <p>Rest content</p>
+
+      </main>
+    </>
 
 
 

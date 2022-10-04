@@ -28,7 +28,7 @@ function ImageFileUpload({ wrapperProps, inputProps }) {
                 {...inpProps}
             />
 
-            <p>Recommended: 512x512px</p>
+            <span className='msg'>Recommended: 512x512px</span>
 
             <div className='cta'>
                 <span className="up "> {/* disabled */}

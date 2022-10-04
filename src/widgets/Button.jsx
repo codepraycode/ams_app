@@ -5,7 +5,7 @@ const Button = ({ label, link, ...rest}) => {
 
     const pprops = {
         type:"button",
-        className: "btn bg-gradient-dark w-100 my-0 mb-2",
+        className: "btn",
         ...rest
     }
 
