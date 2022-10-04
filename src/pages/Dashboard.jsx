@@ -17,23 +17,7 @@ const Dashboard = () => {
   })
 
 
-  return (
-    <>
-
-      {/* <SideBar/> */}
-
-      <main>
-
-        <Navbar/>
-
-        <p>Rest content</p>
-
-      </main>
-    </>
-
-
-
-  )
+  return (<p>Rest content</p>)
 }
 
 export default Dashboard;

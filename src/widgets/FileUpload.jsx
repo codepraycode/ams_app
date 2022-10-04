@@ -1,5 +1,5 @@
 import React from 'react';
-import { placholder } from '../constants/assets';
+import { placeholder } from '../constants/assets';
 
 
 function ImageFileUpload({ wrapperProps, inputProps }) {
@@ -21,7 +21,7 @@ function ImageFileUpload({ wrapperProps, inputProps }) {
       <div {...pprops}>
 
           <div className="preview" >
-                <img src={placholder} />
+                <img src={placeholder} />
             </div>
           <div className='upload_action'>
             <input
