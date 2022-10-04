@@ -1,4 +1,5 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 
@@ -16,21 +17,7 @@ const Dashboard = () => {
 
             <main>
 
-                <div className='intro'>
-
-                    <div>
-                        <h3>Welcome!</h3>
-
-                        {/* <p>Last login was 23 hours ago</p> */}
-                    </div>
-
-                    <div>
-                        <button>Verify Account</button>
-                        <button>Activate Account</button>
-                    </div>
-                </div>
-
-                <p>Rest content</p>
+                <Outlet/>
 
             </main>
         </>

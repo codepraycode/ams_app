@@ -1,19 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { signInUrl, signUpUrl } from '../constants/app_urls';
-
-import { curve1 } from '../constants/assets';
-
+import { signInUrl } from '../constants/app_urls';
 
 import Input from '../widgets/Input';
 import Form from '../widgets/Form';
-import Checkbox from '../widgets/Checkbox';
+// import Checkbox from '../widgets/Checkbox';
 import Button from '../widgets/Button';
 
 import { associationSignUpFormConfig } from '../constants/form_configs';
 import FileUpload from '../widgets/FileUpload';
 import Pager from '../widgets/Pager';
-import Footer from '../components/Footer';
 
 
 const CreateAccount = () => {
