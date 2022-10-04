@@ -16,17 +16,18 @@ import Pager from '../widgets/Pager';
 import Footer from '../components/Footer';
 
 
-const SignUp = () => {
+const CreateAccount = () => {
 
   const navigate = useNavigate();
 
   return (
     <>
 
-      <div className="header">
-        
+      <div className="title">
         <h4>Create association account</h4>
       </div>
+
+      <Pager row={3}/>
 
 
     
@@ -62,4 +63,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp;
+export default CreateAccount;

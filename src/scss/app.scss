@@ -16,37 +16,62 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.auth_content{
-    background-color: $white;
+#root{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.auth_card{
+
+    background-color: $white;
     width: 400px;
     max-width: 90%;
     margin: 30px auto;
+    padding: 10px 0px;
 
-    padding: 20px 30px;
-
-    .header{
-        h4{
-            color: $gray-600;
-            font-weight: 400;
-        }
-    }
-
-    & > .cta{
-        display: block;
-        
+    .brand {
+        // margin: 10px 20px;
+        margin-top: 0px;
+        // margin-left: 30px;
+        margin-bottom: 0;
         text-align: center;
-        margin-top: 20px;
-        font-size: $small+3;
-        color: $gray-800;
-
-        a{
-            margin-left: 10px;
-            font-weight: bold;
-        }
     }
+
+    form{
+        padding: 10px 30px;
+    }
+
+    .auth_content{
+        
+
+        .title{
+            text-align: center;
+            margin: 10px 0;
+            h4{
+                color: $gray-600;
+                font-weight: bold;
+                margin: 5px 0;
+                font-size: $small +3;
+            }
+        }
+
+        & > .cta{
+            display: block;
+            
+            text-align: center;
+            margin-top: 5px;
+            font-size: $small+3;
+            color: $gray-800;
+
+            a{
+                margin-left: 10px;
+                font-weight: bold;
+            }
+        }
     
-}
+}}
 
 .brand{
     font-size: $extraLarge+10;
@@ -206,11 +231,10 @@ body{
 }
 
 .form_pager {
-    // 
-    // width: 600px;
-    // max-width: 100%;
+    
     width: 100%;
     overflow: hidden;
+    margin: 10px 0;
 
     ul {
         list-style: none;
@@ -219,35 +243,43 @@ body{
         justify-content: space-evenly;
         padding: 0;
         margin: 0;
-        counter-reset: myCounter;
-
+        
         li {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             border: 1px solid $gray-300;
             background-color: $white;
             position: relative;
-            counter-increment: myCounter;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: $gray-500;
+            
+            
 
             &::before {
                 content: '';
                 position: absolute;
-                left: -150%;
+                left: -185%;
                 top: 50%;
                 height: 1px;
-                width: 400%;
+                width: 182%;
                 background-color: $gray-200;
-                z-index: -1 !important;
+                // z-index: -1 !important;
             }
-
-            &::after {
-                content: counter(myCounter);
+            &:last-of-type::after {                        
+                content: '';
                 position: absolute;
-
-                color: $gray-500;
-                transform: translate(220%, 50%);
+                right: -190%;
+                top: 50%;
+                height: 1px;
+                width: 190%;
+                background-color: $gray-200;
             }
+
         }
     }
 }

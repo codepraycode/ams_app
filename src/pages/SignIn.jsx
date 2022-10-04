@@ -12,21 +12,10 @@ import Button from '../widgets/Button.jsx';
 import ToggleSwitch from '../widgets/ToggleSwitch.jsx';
 
 const SignUp = () => {
-  useEffect(() => {
-    const body = document.querySelector('body')
-
-    // console.log(body.classNameList)
-    body.classList.add("bg-white");
-
-    return () => {
-      body.classList.remove("bg-white")
-    }
-  })
 
   return (
     <>
-      <div className="header">
-
+      <div className="title">
         <h4>Login to association account</h4>
       </div>
 
@@ -59,7 +48,7 @@ const SignUp = () => {
         Don't have an account?  <Link
           to={signUpUrl}
           className="text-info text-gradient font-weight-bold">
-          Sign up
+          Create Account
         </Link>
       </span>
 

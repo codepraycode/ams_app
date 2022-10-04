@@ -7,7 +7,7 @@ import AuthLayout from './layouts/AuthLayout';
 
 import Dashboard from './pages/Dashboard.jsx';
 import SignIn from "./pages/SignIn.jsx";
-import SignUp from "./pages/SignUp.jsx";
+import CreateAccount from "./pages/CreateAccount.jsx";
 
 
 const AppRoutes = ()=>{
@@ -24,7 +24,7 @@ const AppRoutes = ()=>{
             
             <Route path={signUpUrl} element={
                     <AuthLayout>
-                        <SignUp />
+                        <CreateAccount />
                     </AuthLayout>
                 }
             />

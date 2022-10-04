@@ -4,11 +4,14 @@ import React from 'react'
 
 function AuthLayout({children}) {
   return (
-    <div className="auth_content">
+    <div className="auth_card">
 
       <h2 className='brand'>AMS App</h2>
 
-      {children}
+      <div className="auth_content">
+        {children}
+      </div>
+      
         
     </div>
   )

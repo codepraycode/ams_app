@@ -5,7 +5,7 @@ function Pager({row}) {
     const temp = [];
 
     for (let i=0; i<row; i++){
-        temp.push(<li key={i}></li>);
+        temp.push(<li key={i}>{i+1}</li>);
     }
 
   return (
