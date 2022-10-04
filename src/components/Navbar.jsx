@@ -13,12 +13,6 @@ const Navbar = () => {
 
 
                 <div>
-                    {/* Actions */}
-                    {/* <div className="actions">
-                        <button>Activate Account</button>
-                        <button>Verify Mail</button>
-                    </div> */}
-
                     <div className="account_">
                         <span>Association</span>
                         <div className='avatar'>

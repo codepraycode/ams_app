@@ -1,32 +1,34 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Navbar from '../components/Navbar';
-import SideBar from '../components/SideBar';
+
 
 
 
 const Dashboard = () => {
-    useEffect(() => {
-        const body = document.querySelector('body')
-
-        // console.log(body.classNameList)
-        body.classList.add("bg-gray-100");
-
-        return () => {
-            body.classList.remove("bg-gray-100")
-        }
-    })
 
 
     return (
         <>
-
-            {/* <SideBar/> */}
 
             <header>
                 <Navbar />
             </header>
 
             <main>
+
+                <div className='intro'>
+
+                    <div>
+                        <h3>Welcome!</h3>
+
+                        {/* <p>Last login was 23 hours ago</p> */}
+                    </div>
+
+                    <div>
+                        <button>Verify Account</button>
+                        <button>Activate Account</button>
+                    </div>
+                </div>
 
                 <p>Rest content</p>
 

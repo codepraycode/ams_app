@@ -1,21 +1,7 @@
-import React, { useEffect } from 'react'
-import Navbar from '../components/Navbar';
-import SideBar from '../components/SideBar';
+import React from 'react'
 
 
-
-const Dashboard = () => {
-  useEffect(() => {
-    const body = document.querySelector('body')
-
-    // console.log(body.classNameList)
-    body.classList.add("bg-gray-100");
-
-    return () => {
-      body.classList.remove("bg-gray-100")
-    }
-  })
-
+const Dashboard = () => {  
 
   return (<p>Rest content</p>)
 }
