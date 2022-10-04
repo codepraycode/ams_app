@@ -6,7 +6,15 @@ function Levies() {
     const levies = useSelector(getLevies);
 
   return (
-      <section className='levy px-2'>
+      <section className='levies_container px-2'>
+
+        <div className="title">
+          <span className='label'>Associtation Levies</span>
+
+          <span className='liner'></span>
+        </div>
+
+        <div className="levy">
         {
               levies.map((levy)=>(
                   <div className='levy_item' key={levy.id}>
@@ -14,6 +22,7 @@ function Levies() {
                 </div>
             ))
         }
+        </div>
         
         
       </section>
