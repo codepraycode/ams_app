@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { homeUrl, signUpUrl } from '../constants/app_urls';
-import { curve2 } from '../constants/assets';
+
 import { associationSignInFormConfig } from '../constants/form_configs';
 
 
@@ -12,6 +12,18 @@ import Button from '../widgets/Button.jsx';
 import ToggleSwitch from '../widgets/ToggleSwitch.jsx';
 
 const SignUp = () => {
+
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    const root = document.getElementById("root");
+
+    root.classList.add("center");
+
+    return ()=>{
+      root.classList.remove("center");
+    }
+  })
 
   return (
     <>
