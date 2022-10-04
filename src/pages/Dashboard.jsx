@@ -16,7 +16,7 @@ const Dashboard = () => {
           {/* <p>Last login was 23 hours ago</p> */}
         </div>
 
-        <div>
+        <div className={"actions"}>
           <button>Verify Account</button>
           <button>Activate Account</button>
         </div>

@@ -524,13 +524,21 @@ nav{
     // background-color: red;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     padding: 10px 20px;
+
+
+    .actions{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 25px;
+    }
 
 
     button{
         padding: 10px 20px ;
-        margin: 0 15px;
+        // margin: 0 15px;
         transition: all 0.4s ease;
         cursor: pointer;
         color: darken($color: $primary, $amount: 50%);
@@ -651,21 +659,28 @@ nav{
     }
 }
 
-@media (max-width:360px) {
+@media (max-width:780px) {
     nav{
         a{
             padding: 10px;
         }
     }
 
-        .top_bar {
-            padding: 0 10px;
-    
-            .account_ {
-                span {
-                    display: none;
-                }
+    .top_bar {
+        padding: 0 10px;
+
+        .account_ {
+            span {
+                display: none;
             }
+        }
+    }
+
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
         }
 }
 
