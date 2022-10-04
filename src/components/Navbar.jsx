@@ -1,6 +1,7 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import {placeholder} from '../constants/assets';
+import {signInUrl} from '../constants/app_urls';
 
 
 const Navbar = () => {
@@ -14,7 +15,7 @@ const Navbar = () => {
 
                 <div>
                     <div className="account_">
-                        <span>Association</span>
+                        <span><Link to={signInUrl}> Association </Link></span>
                         <div className='avatar'>
                             <img src={placeholder} alt="Logo" />
                         </div>
