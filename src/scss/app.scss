@@ -626,7 +626,7 @@ nav{
     overflow-x: auto;
 
     &_item{
-        height: 120px;
+        height: 100px;
         width: 200px;
         background-color: $white;
         display: flex;
@@ -677,11 +677,20 @@ nav{
     }
 
 
-        .intro {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
+    .intro {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+
+    .levy{
+        flex-direction: column;
+
+        &_item{
+            width: 90%;
         }
+    }
 }
 
 @media (max-width:280px) {
