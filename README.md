@@ -11,9 +11,9 @@ Features includes:
 - Creating Member account
 - Creating and grouping members
 - Creating Levy charge
-- Managing levy charge
+- Managing levy charge responses
 - Receiving payments on levy charge
-- Member's account top
+- Member's account topup
 
 
 # App Structure (plan)
