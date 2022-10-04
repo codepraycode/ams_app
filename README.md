@@ -1,6 +1,6 @@
 # Association management system
 
-A web application for associations to digitaize activies, keep adequate track records and providing accounting features
+A web application for associations to digitaize activies, keep adequate track records and provides digitized accounting features.
 
 # Features
 
