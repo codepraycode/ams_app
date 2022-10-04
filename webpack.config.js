@@ -14,18 +14,14 @@ module.exports = {
     devServer:{
         historyApiFallback:true,
         port:3090,
-        // inline:true,
-        // hot:true,
-        // devtool:'eval',
-        // contentBase:'app/ui/www'
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['', '.js', '.jsx'],
     },
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js[x]?$/, ///\.(js|jsx)$/,
                 exclude: [/node_modules/, /public/],
                 use: {
                     loader: "babel-loader",
@@ -46,10 +42,6 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: 'public/assets', to: '../build/assets' },
-                // { from: 'public/backend', to: '../build/backend' },
-                // { from: 'public/electron.js', to: '../build' },
-                // { from: 'public/launcher.html', to: '../build' },
-                // { from: 'public/preload.js', to: '../build' },
             ],
         })
     ],
