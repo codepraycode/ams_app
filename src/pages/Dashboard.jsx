@@ -8,7 +8,8 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className='intro'>
+
+      <section className='intro'>
 
         <div>
           <h3>Welcome!</h3>
@@ -20,12 +21,14 @@ const Dashboard = () => {
           <button>Verify Account</button>
           <button>Activate Account</button>
         </div>
-      </div>
+      </section>
 
 
-      <Levies />
-
-      <Groups/>
+      <section className='sided_section'>
+        <Levies />
+        <div className="divider"></div>
+        <Groups/>
+      </section>
 
     </>
   )
