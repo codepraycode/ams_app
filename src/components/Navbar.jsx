@@ -2,10 +2,11 @@ import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import {placeholder} from '../constants/assets';
 import {signInUrl} from '../constants/app_urls';
-
+import {useNavigate} from 'react-router-dom';
 
 const Navbar = () => {
     const {pathname} = useLocation();
+    const navigate = useNavigate();
 
     return (
         <>
@@ -16,7 +17,7 @@ const Navbar = () => {
                 <div>
                     <div className="account_">
                         <span><Link to={signInUrl}> Association </Link></span>
-                        <div className='avatar'>
+                        <div className='avatar' onClick={()=>navigate(signInUrl)}>
                             <img src={placeholder} alt="Logo" />
                         </div>
                     </div>
