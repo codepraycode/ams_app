@@ -9,6 +9,7 @@ import DashboardLayout from './layouts/DashboardLayout';
 import Dashboard from './pages/Dashboard.jsx';
 import SignIn from "./pages/SignIn.jsx";
 import CreateAccount from "./pages/CreateAccount.jsx";
+import UnderConstruction from './errors/Construction';
 
 
 const AppRoutes = ()=>{
@@ -17,8 +18,8 @@ const AppRoutes = ()=>{
 
             <Route path={homeUrl} element={<DashboardLayout />}>
                 <Route path={''} index element={<Dashboard />} />
-                <Route path={'members'} exact element={<Dashboard />} />
-                <Route path={'profile'} exact element={<Dashboard />} />
+                <Route path={'members'} exact element={<UnderConstruction />} />
+                <Route path={'profile'} exact element={<UnderConstruction />} />
             </Route>
 
 
