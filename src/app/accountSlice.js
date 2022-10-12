@@ -111,6 +111,7 @@ const accountSlice = createSlice({
 // Selectors
 export const getAccount = (state)=> state.account.account;
 export const getGroups = (state)=> state.account.groups;
+export const getGroupByUrl = (state, url)=> state.account.groups.find(each=>each.url === url);
 export const getLevies = (state)=> state.account.levies;
 
 

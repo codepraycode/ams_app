@@ -1,19 +1,27 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { getGroupByUrl } from '../app/accountSlice'
 import { getMembers } from '../app/memberSlice'
 import Section from '../components/Section'
 import Table from '../components/Table'
+import { placeholder } from '../constants/assets'
 import Button from '../widgets/Button'
 
 
 const MemberErcept = ({member}) =>{
 
-    return <>{member.first_name} {member.last_name}</>
+    return <div className="avatar_pre">
+        <div className="avatar sm">
+            <img src={placeholder} alt="member image"/>
+        </div>
+        <span>{member.first_name} {member.last_name}</span>
+    </div>
 }
 
 const MemberGroupErcept = ({member}) =>{
+    const group = useSelector((state) => getGroupByUrl(state, member.group_url));
 
-    return <>member group</>
+    return <>{member.group_id}, {group?.name}</>
 }
 
 const Members = () => {
@@ -24,7 +32,7 @@ const Members = () => {
         "Group",
         // "Ethnicity",
         // "state_of_origin",
-        "Joined", // Date Joined,
+        "Date Added", // Date Joined,
         <>{" "}</>
     ]
 
@@ -35,7 +43,7 @@ const Members = () => {
             <MemberErcept member={each}/>,
             each.contact,
             each.occupation,
-            <MemberGroupErcept/>,
+            <MemberGroupErcept member={each} />,
             new Date(each.date_joined).toDateString(),
 
             <Button
