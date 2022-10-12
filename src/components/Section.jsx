@@ -24,11 +24,14 @@ function Section({ title, children, header, wrapperProps, contentProps }) {
                 <div className="header">
                     <span className='section_title'>{header.title}</span>
 
-                    <Button
-                        label={header.action.label}
-                        variant={"solid"}
-                        onClick={header.action.act}
-                    />
+                    {
+                        header.action && (<Button
+                            label={header.action.label}
+                            variant={"solid"}
+                            onClick={header.action.act}
+                        />)
+                    }
+                    
 
                     <span className='liner'></span>
                 </div>

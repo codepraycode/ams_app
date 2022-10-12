@@ -26,16 +26,16 @@ const Table = ({header, size, tableHeadData, tableBodyData, checkable}) => {
                 {
                     // tableBodyData is an array of arrays
 
-                    tableBodyData.map((each_item,i)=>(
-                        <tr key={i}>
-                            {checkable && <td>{i+1}</td>}
+                      tableBodyData.map((each_item, i) => (
+                          <tr key={i}>
+                              {checkable && <td>{i + 1}</td>}
 
-                            {/* each_item is an array */}
+                              {/* each_item is an array */}
 
-                            {each_item.map((each, i) => (<td key={i}>{each}</td>))}
+                              {each_item.map((each, i) => (<td key={i}>{each}</td>))}
 
-                        </tr>
-                    ))
+                          </tr>
+                      ))
                       
                 }
             </tbody>

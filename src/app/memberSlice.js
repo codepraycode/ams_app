@@ -78,8 +78,6 @@ const memberSlice = createSlice({
 
 // Selectors
 export const getMembers = (state) => state.member.members;
-export const getGroups = (state) => state.member.groups;
-export const getLevies = (state) => state.member.levies;
 
 
 export default memberSlice;

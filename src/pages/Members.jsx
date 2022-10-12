@@ -1,34 +1,75 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { getMembers } from '../app/memberSlice'
 import Section from '../components/Section'
+import Table from '../components/Table'
+import Button from '../widgets/Button'
+
+
+const MemberErcept = ({member}) =>{
+
+    return <>{member.first_name} {member.last_name}</>
+}
+
+const MemberGroupErcept = ({member}) =>{
+
+    return <>member group</>
+}
 
 const Members = () => {
-  return (
-    <Section wrapperProps={{className:"nav_section"}}>
+    const headers = [
+        "Member", // passport, firstname, lastname
+        "Contact", 
+        "Occupation", //
+        "Group",
+        // "Ethnicity",
+        // "state_of_origin",
+        "Joined", // Date Joined,
+        <>{" "}</>
+    ]
 
-        <ul className="section_nav">
-            <li className='active'>
-                Group 1
-            </li>
+    const members = useSelector(getMembers);
 
-            <li>
-                Group 2
-            </li>
+    const membersLists = members.map((each)=>(
+        [
+            <MemberErcept member={each}/>,
+            each.contact,
+            each.occupation,
+            <MemberGroupErcept/>,
+            new Date(each.date_joined).toDateString(),
+
+            <Button
+                label="View Profile"
+                variant={"solid center"}
+
+            />
+        ]
+    ))
+
+    return (
+        <Section 
+            header={{
+                title: "Association Members",
+                action:{
+                    label:"Create new member",
+                    act: ()=>{}
+                }
+            }}
+        >
+
+
+            {/* Rendering members as table */}
+
+            <Table
+                header={"Association Members"}
+                tableHeadData={headers}
+                tableBodyData={membersLists}
+                size={"w-100"}
+            />
             
-            <li>
-                Group 3
-            </li>
-            
-        </ul>
 
-
-        <div className="content">
-            content
-        </div>
-
-        
-
-    </Section>
-  )
+        </Section>
+    )
 }
 
 export default Members
