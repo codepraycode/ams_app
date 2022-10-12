@@ -47,7 +47,8 @@ const CreateAccount = () => {
 
 
         <Button 
-          className = "btn btn-lg"
+          size={"lg"}
+          variant="full"
           type="submit" label={"Next"} 
         />
 
