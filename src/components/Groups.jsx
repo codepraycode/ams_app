@@ -7,7 +7,14 @@ function Groups() {
   const groups = useSelector(getGroups);
 
   return (
-    <Section title={"Groups"}>
+    <Section header={{
+        title: "Associtation Groups",
+        action: {
+          label: "Create group",
+          act: () => {}
+        }
+      }}
+    >
 
       <div className="cards">
         {

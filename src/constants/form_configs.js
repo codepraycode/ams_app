@@ -113,7 +113,8 @@ const associationLevyFormConfig = {
     label: {
         type: "text",
         name: "label",
-        // placeholder: "Association ",
+        placeholder: "Enter a levy name",
+        label:"Levy name",
         required: true,
     },
 

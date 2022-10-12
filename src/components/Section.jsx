@@ -4,7 +4,7 @@ import Button from '../widgets/Button';
 
 /* A section wrapper */
 
-function Section({ title, children, wrapperProps, contentProps }) {
+function Section({ title, children, header, wrapperProps, contentProps }) {
 
     const wrapperPropsToUse = {
         ...wrapperProps
@@ -20,16 +20,19 @@ function Section({ title, children, wrapperProps, contentProps }) {
     return (
         <section {...wrapperPropsToUse}>
 
-            <div className="header">
-                <span className='section_title'>{title}</span>
+            {header && (
+                <div className="header">
+                    <span className='section_title'>{header.title}</span>
 
-                <Button 
-                    label={"Add"}
-                    variant={"solid"}
-                />
+                    <Button
+                        label={header.action.label}
+                        variant={"solid"}
+                        onClick={header.action.act}
+                    />
 
-                <span className='liner'></span>
-            </div>
+                    <span className='liner'></span>
+                </div>
+            )}
 
             <div {...wrapperContentProps}>
 
