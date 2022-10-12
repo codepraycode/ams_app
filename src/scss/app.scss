@@ -433,6 +433,9 @@ a{
 
 .d-flex{
     display: flex;
+    &.flex-wrap{
+        flex-wrap: wrap;
+    }
     &.align-item-center{
         align-items: center;
     }
@@ -442,6 +445,32 @@ a{
         }
         &-center{
             justify-content: center;
+        }
+        &-around{
+            justify-content: space-around;
+        }
+    }
+
+    &.col-gap{
+        &-1{
+            column-gap: 10px;
+        }
+        &-2{
+            column-gap: 20px;
+        }
+        &-3{
+            column-gap: 30px;
+        }
+    }
+    &.row-gap{
+        &-1{
+            row-gap: 10px;
+        }
+        &-2{
+            row-gap: 20px;
+        }
+        &-3{
+            row-gap: 30px;
         }
     }
 }
@@ -769,6 +798,55 @@ section {
     }
 }
 
+
+.table_container{
+    background-color: $white;
+    width: max-content;
+    min-width: 300px;
+    max-width: 95%;
+    // margin: 0 auto;
+
+    border-radius: 10px;
+    height: 400px;
+    // &.sm{
+    //     height: 400px;
+    //     overflow: auto;
+    // }
+
+
+    padding: 10px 5px;
+
+    &--header{
+        font-size: $medium;
+        margin: 10px 15px 20px 15px;
+    }
+
+    table{
+        text-align: center;
+        width: 400px;
+        max-width: 100%;
+        th{
+            padding: 10px 0;
+            // width: max-content;
+            // max-width: 200px;
+        }
+
+        tr:last-of-type {
+            padding-bottom: 0;
+        }
+
+        td{
+            padding: 14px 0;
+            &:last-of-type {
+                padding-bottom: 0;
+            }
+
+            &:nth-child(2){
+            font-weight: bold;
+        }}
+    }
+}
+
 @media (max-width:780px) {
     nav{
         a{
@@ -843,13 +921,16 @@ section {
         margin-bottom: 35px;
     }
 
-
     .cards{
         flex-direction: column;
 
         &_item{
             width: 90%;
         }
+    }
+
+    .table_container {
+        margin: 0 auto;
     }
 }
 

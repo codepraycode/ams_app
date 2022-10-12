@@ -4,10 +4,21 @@ import Button from '../widgets/Button';
 
 /* A section wrapper */
 
-function Section ({title, children }) {
+function Section({ title, children, contentProps }) {
+
+    const wrapperProps = {
+        // className: className||''
+    }
+
+    const { className:contentClassNames, ...restContentProps } = contentProps || {};
+
+    const wrapperContentProps = {
+        className: `section_content ${contentClassNames || ''}` ,
+        ...restContentProps,
+    }
 
     return (
-        <section>
+        <section {...wrapperProps}>
 
             <div className="header">
                 <span className='section_title'>{title}</span>
@@ -20,8 +31,10 @@ function Section ({title, children }) {
                 <span className='liner'></span>
             </div>
 
-            <div className="section_content">
+            <div {...wrapperContentProps}>
+
                 {children}
+
             </div>
 
 
