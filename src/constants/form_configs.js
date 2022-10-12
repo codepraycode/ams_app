@@ -102,7 +102,8 @@ const associationGroupFormConfig = {
     name: {
         type: "text",
         name: "name",
-        // placeholder: "Association ",
+        placeholder: "Enter group name",
+        label: "Group name",
         required: true,
     },
 
