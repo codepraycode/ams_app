@@ -865,14 +865,20 @@ section {
     &_item{
         height: 100px;
         min-width: 200px;
+
         background-color: $white;
         display: flex;
-        align-items: center;
+        align-items:stretch;
+        justify-content: end;
+        flex-direction: column;
+        row-gap: 20px;
+
         font-weight: bold;
         font-size: $medium -5;
-        padding: 0 20px;
+        
+        padding: 0 10px 5px 10px;
+        
         border-radius: 6px;
-
         border-bottom: 3px solid $primary;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;
 
@@ -882,17 +888,17 @@ section {
         h2{
             margin: 0;
             // margin-left: 10px;
+            font-size: $medium;
         }
-        // &::after{
-        //     content: "";
-        //     position: absolute;
-        //     display: block;
-        //     bottom: 0;
-        //     left: 0;
-        //     height: 5px;
-        //     width: 100%;
-        //     background-color: $primary;
-        // }
+
+        a{
+            font-size: $small;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            &:hover{
+                font-weight: bold;
+            }
+        }
     }
 }
 

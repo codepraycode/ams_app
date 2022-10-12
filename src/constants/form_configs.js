@@ -120,6 +120,18 @@ const associationLevyFormConfig = {
     },
 
 }
+const associationLevyChargeFormConfig = {
+    
+    label: {
+        type: "number",
+        name: "amount",
+        placeholder: "Enter charge amount",
+        label:"Charge amount",
+        min:10,
+        required: true,
+    },
+
+}
 
 const associationMemberFormConfig = {
     passport: {
@@ -227,5 +239,6 @@ export {
     associationSignInFormConfig,
     associationGroupFormConfig,
     associationLevyFormConfig,
+    associationLevyChargeFormConfig,
     associationMemberFormConfig,
 }
