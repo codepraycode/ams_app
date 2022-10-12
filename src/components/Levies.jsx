@@ -25,9 +25,9 @@ const Levies = ()=>{
         <Section 
           
           header={{
-            title: "Associtation Levy Charge",
+            title: "Associtation Levy",
             action:{
-              label:"Create Levy Charge",
+              label:"Create Levy",
               act:()=>setShowCreateLevy(true)
             }
           }}
