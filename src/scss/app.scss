@@ -432,6 +432,12 @@ body{
         margin: 5px auto;
         padding: 15px 0;
     }
+    &.block{
+        display: block;
+        &.center{
+            margin: 0 auto;
+        }
+    }
 
     &.btn-xs {
         padding: $small $small;
@@ -926,28 +932,32 @@ section {
     }
 
     table{
-        text-align: center;
+        // text-align: center;
         width: 400px;
         max-width: 100%;
-        th{
-            padding: 10px 0;
-            // width: max-content;
-            // max-width: 200px;
-        }
-
-        tr:last-of-type {
-            padding-bottom: 0;
+        // border-collapse: separate;
+        
+        th,td{
+            // border-spacing: 0 15px;
+            // border:1px solid $gray-100;
+            text-align: center;
+            padding: 10px;
         }
 
         td{
-            padding: 14px 0;
+            
             &:last-of-type {
                 padding-bottom: 0;
             }
 
             &:nth-child(2){
-            font-weight: bold;
-        }}
+                font-weight: bold;
+            }
+
+            .btn{
+                display: inline;
+            }
+        }
     }
 }
 

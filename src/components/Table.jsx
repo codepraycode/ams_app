@@ -7,7 +7,7 @@ const Table = ({header, size, tableHeadData, tableBodyData, checkable}) => {
     <div className={`table_container ${size || ''}`}>
         
 
-        <h3 className='table_container--header'>Table Header</h3>
+        <h3 className='table_container--header'>{header || "Table Header"}</h3>
 
         <table>
 

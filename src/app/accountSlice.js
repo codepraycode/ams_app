@@ -45,6 +45,14 @@ const initialState = {
                     "payment_url": "http://127.0.0.1:8000/api/account/levies/charges/payment/",
                     "members_url": "http://127.0.0.1:8000/api/account/levies/charges/6/members/",
                     "date_created": "2022-09-28T14:47:08.106746Z"
+                },
+                {
+                    "id": 5,
+                    "url": "http://127.0.0.1:8000/api/account/levies/charges/5/",
+                    "amount": "2500.00",
+                    "payment_url": "http://127.0.0.1:8000/api/account/levies/charges/payment/",
+                    "members_url": "http://127.0.0.1:8000/api/account/levies/charges/6/members/",
+                    "date_created": "2022-09-28T14:47:08.106746Z"
                 }
             ]
         },
@@ -67,7 +75,7 @@ const initialState = {
         },
         {
             "id": 5,
-            "label": "Street",
+            "label": "Electricity",
             "url": "http://127.0.0.1:8000/api/account/levies/3/",
             "date_created": "2022-09-28T12:04:01.253879Z",
             "create_charges_url": "http://127.0.0.1:8000/api/account/levies/charges/create/",
