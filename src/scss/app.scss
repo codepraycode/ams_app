@@ -130,6 +130,9 @@ body{
             font-style: italic;
             color: $gray-400;
             margin: 15px 0;
+            &.error{
+                color: $red;
+            }
         }
 
         & .cta {
@@ -242,6 +245,8 @@ body{
 
 .form_pager {
 
+    
+
     width: 100%;
     overflow: hidden;
     margin: 10px 0;
@@ -269,7 +274,6 @@ body{
             color: $gray-500;
 
 
-
             &::before {
                 content: '';
                 position: absolute;
@@ -289,6 +293,53 @@ body{
                 height: 1px;
                 width: 190%;
                 background-color: $gray-200;
+            }
+
+
+            &.active {
+                border-color: $primary;
+                background-color: $primary;
+                color: $white;
+                font-weight: bold;
+
+                &::before {
+                    background-color: $primary;
+                }
+                
+                &:last-of-type::after {
+                    background-color: $primary;
+                }
+
+            }
+            &.passed {
+                border-color: $teal;
+                background-color: $teal;
+                color: $white;
+                font-weight: bold;
+
+                &::before {
+                    background-color: $teal;
+                }
+                
+                &:last-of-type::after {
+                    background-color: $teal;
+                }
+
+            }
+            &.error {
+                border-color: $red;
+                background-color: $red;
+                color: $white;
+                font-weight: bold;
+
+                &::before {
+                    background-color: $red;
+                }
+                
+                &:last-of-type::after {
+                    background-color: $red;
+                }
+
             }
 
         }
