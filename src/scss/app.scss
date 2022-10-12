@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: $gray-200;
+    background-color: $gray-100;
     width: 100%;
     height: 100%;
 
@@ -18,6 +18,7 @@ body{
 
 #root.center{
     height: 100vh;
+    // width: 100vw !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,6 +80,8 @@ body{
     margin: 20px 0;
     font-weight: bold;
 }
+
+// Forms
 .img_uploader {
 
     height: 100px;
@@ -175,10 +178,11 @@ body{
 .form-group {
     display: flex;
     flex-direction: column-reverse;
-    
+
 
     margin: 30px 0;
-    label{
+
+    label {
         font-weight: 600;
         font-size: $small+2;
         margin-bottom: 10px;
@@ -189,7 +193,7 @@ body{
         position: relative;
         // background: red;
         width: fit-content;
-        
+
 
         &::after {
             content: '*';
@@ -207,18 +211,19 @@ body{
     // border-radius: 3px;
     font-size: $small;
 
-    padding: 15px  25px;
+    padding: 15px 25px;
     border: 1px solid $gray-300;
     font-family: 'Source Sans Pro', sans-serif;
     color: $gray-800;
-    &::placeholder{
+
+    &::placeholder {
         color: $gray-500;
     }
 
     outline: none;
 
     transition: all ease-out 0.3s;
-    
+
 
 
     &:focus {
@@ -232,7 +237,7 @@ body{
 }
 
 .form_pager {
-    
+
     width: 100%;
     overflow: hidden;
     margin: 10px 0;
@@ -244,7 +249,7 @@ body{
         justify-content: space-evenly;
         padding: 0;
         margin: 0;
-        
+
         li {
             width: 40px;
             height: 40px;
@@ -252,14 +257,14 @@ body{
             border: 1px solid $gray-300;
             background-color: $white;
             position: relative;
-            
+
             display: flex;
             align-items: center;
             justify-content: center;
 
             color: $gray-500;
-            
-            
+
+
 
             &::before {
                 content: '';
@@ -271,7 +276,8 @@ body{
                 background-color: $gray-200;
                 // z-index: -1 !important;
             }
-            &:last-of-type::after {                        
+
+            &:last-of-type::after {
                 content: '';
                 position: absolute;
                 right: -190%;
@@ -285,6 +291,8 @@ body{
     }
 }
 
+// =================================================================
+
 .error {
     display: block;
     margin: 5px 0;
@@ -297,15 +305,17 @@ body{
 .btn {
     font-size: $small;
     line-height: 1;
+    
     font-weight: 600;
-    border-radius: 10px;
     font-family: 'Source Sans Pro', sans-serif;
-    padding: 15px ;
+    
+    padding: 12px 15px;
     cursor: pointer;
 
     border: 0;
+    border-radius: 8px;
 
-    transition: all ease-in-out 0.3s;
+    transition: all 0.1s ease-in;
 
     i {
         font-size: 1rem;
@@ -317,19 +327,52 @@ body{
     }
 
     &.btn-lg {
-        font-size: $small+5;
+        padding: 10px 20px;
+        
         background-color: $primary;
         color: $white;
+
         border-radius: 8px;
 
+        font-size: $small;
+        font-weight: bold;
+
+        
+
+        &:hover {
+            background-color: lighten($color: $primary, $amount: 10%);
+        }
+    }
+    
+    // .btn.gradient
+    &.gradient {
+        color: darken($color: $primary, $amount: 50%);
+        background-color: $gray-300;
+
+        &:hover {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+
+    // .btn.solid
+    &.solid {
+        background-color: $primary;
+        color: $white;
+
+        
+        &:hover {
+            background-color: lighten($color: $primary, $amount: 10%);
+            color: $white;
+        }
+    }
+
+    // .btn.full
+    &.full {
         display: block;
         width: 80%;
         margin: 5px auto;
         padding: 10px 0;
-
-        &:hover{
-            background-color: lighten($color: $primary, $amount: 10%);
-        }
     }
 
     &.btn-xs {
@@ -471,54 +514,55 @@ nav{
     background-color: $white;
     max-width: 100%;
     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    height: 75px;
+
+    column-gap: 30px;
+
+    a{
+        font-weight: bold;
+        padding: 5px 20px;
+        height: 100%;
+
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        padding: 0 20px;
-        height: 75px;
 
-        column-gap: 30px;
+        text-align: center;
+        row-gap: 5px;
 
-        a{
-            font-weight: bold;
-            // background-color: red;
-            padding: 10px 20px;
+        position: relative;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        color: $gray-600;
 
-            text-align: center;
-            row-gap: 5px;
+        transition: all ease-in-out 0.3s;
 
-            position: relative;
-
-            color: $gray-600;
-
-            transition: all ease-in-out 0.3s;
-
-            &.active,
-            &:hover{
-                color: $primary;
-            }
-
-            &::after {
-                content: "";
-                display: none;
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                background-color: $gray-700;
-                bottom: 0;
-                left: 0;
-            }
-
-            &.active::after{
-                display: block;
-            }
+        &.active,
+        &:hover{
+            color: $primary;
         }
+
+        &::after {
+            content: "";
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $gray-700;
+            bottom: 0;
+            left: 0;
+        }
+
+        &.active::after{
+            display: block;
+        }
+    }
 }
 
+// Sections
 section {
     margin: 10px 15px 30px 15px;
     padding: 0px 15px;
@@ -527,12 +571,18 @@ section {
 
     .header {
         font-weight: bold;
-        font-size: $medium -3;
+        font-size: $medium;
 
         position: relative;
         overflow: hidden;
-        // background-color: red;
-        left: 10px;
+
+        // left: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 20px;
 
         margin: 0 0 20px 0;
 
@@ -541,9 +591,10 @@ section {
             margin: 0;
             font-size: $small+4;
             position: relative;
-            left: 70px;
+            // left: 70px;
 
-            background: $gray-200;
+            background: $gray-100;
+            border-radius: 6px;
             padding: 0 10px;
         }
 
@@ -583,18 +634,20 @@ section {
         
         margin: 10px 5px;
         padding: 0px 10px;
-        &:first-of-type .header .liner {
-            width: 95%;
-            height: 1px;
-            background-color: $gray-300;
-            top: 50%;
-            left: 0%;
-            z-index: -1;
+        // &:first-of-type .header .liner {
+        //     width: 95%;
+        //     height: 1px;
+        //     background-color: $gray-300;
+        //     top: 50%;
+        //     left: 0%;
+        //     z-index: -1;
     
     
-        }
+        // }
     }
 }
+
+// ================================================
 
 .intro{
     display: flex;
@@ -607,25 +660,6 @@ section {
         align-items: center;
         justify-content: center;
         column-gap: 25px;
-    }
-
-
-    button{
-        padding: 10px 20px ;
-        // margin: 0 15px;
-        transition: all 0.1s ease-in;
-        cursor: pointer;
-        color: darken($color: $primary, $amount: 50%);
-        background-color: $gray-400;
-        font-weight: bold;
-
-        border: 0;
-        border-radius: 8px;
-
-        &:hover{
-            background-color: $primary;
-            color: $white;
-        }
     }
 }
 
@@ -762,7 +796,7 @@ section {
                     left: 0;
                     display: block;
                     width: fit-content;
-                    margin: 0 auto;
+                    // margin: 0 auto;
                 }
         
                 .liner {

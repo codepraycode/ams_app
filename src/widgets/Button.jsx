@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Button = ({ label, link, ...rest}) => {
+const Button = ({ label, link, variant, size, ...rest}) => {
+
+    const btnSize = size ? "btn-" + size : '';
+    const btnVariant = variant || '';
 
     const pprops = {
         type:"button",
-        className: "btn",
+        className: `btn ${btnVariant} ${btnSize}`.trim(),
         ...rest
     }
 

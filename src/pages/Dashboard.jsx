@@ -2,6 +2,7 @@ import React from 'react'
 import AccountEcept from '../components/AccountEcept';
 import Groups from '../components/Groups';
 import Levies from '../components/Levies';
+import Button from '../widgets/Button';
 
 
 const Dashboard = () => {  
@@ -18,9 +19,18 @@ const Dashboard = () => {
         </div>
 
         <div className={"actions"}>
-          <button>Verify Account</button>
-          <button>Activate Account</button>
+          <Button 
+            label={"Verify Account"} 
+            variant={"gradient"}
+            size={"lg"}
+          />
+            
+          <Button label={"Activate Account"}
+            variant={"gradient"}
+            size={"lg"} 
+          />
         </div>
+        
       </section>
 
 
