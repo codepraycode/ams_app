@@ -11,8 +11,9 @@ import Dashboard from './pages/Dashboard.jsx';
 import SignIn from "./pages/SignIn.jsx";
 import CreateAccount from "./pages/CreateAccount.jsx";
 import Members from './pages/Members';
-import UnderConstruction from './errors/Construction';
+// import UnderConstruction from './errors/Construction';
 import Settings from './pages/Settings';
+import Member from './pages/Member';
 
 
 const AppRoutes = ()=>{
@@ -29,7 +30,7 @@ const AppRoutes = ()=>{
                 path={newMemberUrl} 
                 element={
                     <BareLayout>
-                        <UnderConstruction />
+                        <Member />
                     </BareLayout>
                 } 
             />
