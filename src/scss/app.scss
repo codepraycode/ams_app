@@ -1234,7 +1234,10 @@ hr{
 
 .table_container{
     background-color: $white;
-    width: max-content;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    // width: 90%;
+    margin: 0 auto;
     min-width: 300px;
     max-width: 95%;
 
@@ -1246,12 +1249,16 @@ hr{
     &--header{
         font-size: $medium;
         margin: 10px 15px 20px 15px;
+        position: sticky;
+        top: 0;
+        left: 15px;
     }
 
     table{
         // text-align: center;
-        width: 400px;
-        max-width: 100%;
+        // width: 400px;
+        // max-width: 100%;
+        width: 100%;
         
         border-top: 1px solid $gray-100;
         padding: 10px 0;
@@ -1261,6 +1268,7 @@ hr{
             // border:1px solid $gray-100;
             text-align: center;
             padding: 10px;
+            // min-width: 150px;
         }
 
         td{
@@ -1393,7 +1401,18 @@ hr{
     }
 
     .table_container {
-        margin: 0 auto;
+        margin: 25px auto;
+        // width: 500px;
+        // background-color: red;
+        overflow: auto;
+        th,
+            td {
+                // border-spacing: 0 15px;
+                // border:1px solid $gray-100;
+                // text-align: center;
+                // padding: 10px;
+                min-width: 150px;
+            }
     }
 
     // Modal
@@ -1405,32 +1424,39 @@ hr{
 
     }
 
-        .profile_settings {
+    .profile_settings {
 
-    
-            &.members {
-    
-                .profile_content {
-                    display: grid;
-                    grid-template-columns: auto;
-                    row-gap: 20px;
-                    // place-items: center center;
-    
-                }
 
-                .submit_btn {
-                    position: static;
-                    // left: 30vw;
-                }
-    
+        &.members {
+
+            .profile_content {
+                display: grid;
+                grid-template-columns: auto;
+                row-gap: 20px;
+                // place-items: center center;
+
             }
+
+            .submit_btn {
+                position: static;
+                // left: 30vw;
+            }
+
         }
+    }
 
     .grid-2 {
         // display: block;
         grid-template-columns: auto;
         
         // row-gap: 20px;
+    }
+
+    .flex-sm-wrap{
+        // flex-direction: column;
+        display: block;
+        
+        max-width: 100%;
     }
 }
 

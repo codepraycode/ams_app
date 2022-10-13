@@ -38,10 +38,41 @@ const LevyChargeItem = ({levy})=>{
     )
 }
 
+const MemberLevyChargeItem = ()=>{
 
-const LevyChargesLists = () => {
+    const headers = ["Levy name", 'Ref', "Date Isuued", "Charge Amount", "Amount Paid", "Amount left",<>{" "}</>]
+
+    const content = [1,2,3,4,5].map((each,i)=>{
+        return [
+            "Security",
+            "#12dsa"+i+each.id, // ref
+            new Date().toDateString(), // Date
+            "2000", // Amount
+            "1000",
+            "1000",
+
+            <Button
+                label="Pay up"
+                variant={"solid center"}
+            />
+        ]
+    })
+
+    return (
+        <Table
+            header={"Levy Charges"}
+            tableHeadData={headers}
+            tableBodyData={content}
+        // checkable={true}
+        />
+    )
+}
+
+
+const LevyChargesLists = ({ memberId }) => {
     const levies = useSelector(getLevies);
 
+    if (Boolean(memberId)) return <MemberLevyChargeItem/>
 
     return (
         <Section
