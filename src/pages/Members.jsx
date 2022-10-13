@@ -52,7 +52,7 @@ const Members = () => {
             <Button
                 label="View Profile"
                 variant={"solid center"}
-
+                onClick={() => navigate(`${homeUrl}member/${each.id}`)}
             />
         ]
     ))

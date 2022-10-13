@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import Section from '../components/Section';
 import { associationMemberFormConfig } from '../constants/form_configs';
 import UnderConstruction from '../errors/Construction';
@@ -9,6 +10,8 @@ import Input from '../widgets/Input';
 
 const Member = () => {
     const formConfig = associationMemberFormConfig;
+
+    const { memberId } = useParams();
 
     return (
         <Section
@@ -110,7 +113,7 @@ const Member = () => {
 
 
                 <div className="submit_btn">
-                    <Button label={"Create account"} variant="solid full" size={""} />
+                    <Button label={memberId ?"Update account":"Create account"} variant="solid full" size={""} />
                 </div>
                 
             </Form>

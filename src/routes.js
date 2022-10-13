@@ -29,7 +29,15 @@ const AppRoutes = ()=>{
             <Route 
                 path={newMemberUrl} 
                 element={
-                    <BareLayout>
+                    <BareLayout header="Create Member Profile">
+                        <Member />
+                    </BareLayout>
+                } 
+            />
+            <Route 
+                path={homeUrl +"member/:memberId"}
+                element={
+                    <BareLayout header="Member Profile">
                         <Member />
                     </BareLayout>
                 } 
