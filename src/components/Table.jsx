@@ -7,7 +7,7 @@ const Table = ({header, size, tableHeadData, tableBodyData, checkable}) => {
     <div className={`table_container ${size || ''}`}>
         
 
-        <h3 className='table_container--header'>Table Header</h3>
+        <h3 className='table_container--header'>{header || "Table Header"}</h3>
 
         <table>
 
@@ -26,16 +26,16 @@ const Table = ({header, size, tableHeadData, tableBodyData, checkable}) => {
                 {
                     // tableBodyData is an array of arrays
 
-                    tableBodyData.map((each_item,i)=>(
-                        <tr key={i}>
-                            {checkable && <td>{i+1}</td>}
+                      tableBodyData.map((each_item, i) => (
+                          <tr key={i}>
+                              {checkable && <td>{i + 1}</td>}
 
-                            {/* each_item is an array */}
+                              {/* each_item is an array */}
 
-                            {each_item.map((each, i) => (<td key={i}>{each}</td>))}
+                              {each_item.map((each, i) => (<td key={i}>{each}</td>))}
 
-                        </tr>
-                    ))
+                          </tr>
+                      ))
                       
                 }
             </tbody>

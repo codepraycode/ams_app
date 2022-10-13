@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Input = ({inputProps, wrapperProps}) => {
+const Input = ({ inputProps, wrapperProps, editing }) => {
 
+  
     const pprops = {
-      className: "form-group",
+      className: "form-group" + (editing ? " edit" :''),
         ...wrapperProps
     }
 

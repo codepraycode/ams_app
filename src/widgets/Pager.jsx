@@ -1,11 +1,21 @@
 import React from 'react'
 
-function Pager({row}) {
+function Pager({row, active}) {
 
     const temp = [];
 
+    
+
     for (let i=0; i<row; i++){
-        temp.push(<li key={i}>{i+1}</li>);
+        let status = '';
+
+        if (active === i+1){
+            status = 'active'
+        }else if (active > i+1){
+            status = 'passed'
+        }
+
+        temp.push(<li key={i} className={status}>{i+1}</li>);
     }
 
   return (
