@@ -1,8 +1,28 @@
 import React from 'react';
 import { placeholder } from '../constants/assets';
+import Button from './Button';
 
 
-function ImageFileUpload({ wrapperProps, inputProps }) {
+function GrandImageFileUpload({}){
+
+    return (
+        <div className='img_uploader grand'>
+            <div className="preview" >
+                <img src={placeholder} />
+            </div>
+
+            <div className="cta">
+
+                <Button label={"Change"} variant={"gradient"}/>
+                {/* <Button label={"Save"} variant={"solid"}/> */}
+            </div>
+
+            
+        </div>
+    )
+}
+
+function ImageFileUpload({ wrapperProps, inputProps, grand }) {
 
     const {type, ...restInputProps} = inputProps;
 
@@ -17,31 +37,34 @@ function ImageFileUpload({ wrapperProps, inputProps }) {
         ...restInputProps,
     }
 
-  return (
-      <div {...pprops}>
 
-          <div className="preview" >
-                <img src={placeholder} />
+    if( grand) return <GrandImageFileUpload/>;
+
+    return (
+        <div {...pprops}>
+
+            <div className="preview" >
+                    <img src={placeholder} />
+                </div>
+            <div className='upload_action'>
+                <input
+                    {...inpProps}
+                />
+
+                <span className='msg'>Recommended: 512x512px</span>
+
+                <div className='cta'>
+                    <span className="up "> {/* disabled */}
+                        <i className="fas fa-upload "></i>
+                    </span>
+                    
+                    <span className="del">
+                        <i className="fas fa-trash"></i>
+                    </span>
+                </div>
             </div>
-          <div className='upload_action'>
-            <input
-                {...inpProps}
-            />
-
-            <span className='msg'>Recommended: 512x512px</span>
-
-            <div className='cta'>
-                <span className="up "> {/* disabled */}
-                    <i className="fas fa-upload "></i>
-                </span>
-                
-                  <span className="del">
-                    <i className="fas fa-trash"></i>
-                </span>
-            </div>
-          </div>
-      </div>
-  )
+        </div>
+    )
 }
 
 

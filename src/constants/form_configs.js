@@ -28,6 +28,7 @@ const associationSignUpFormConfig = {
         name:"contact",
         placeholder:"Association contact",
         required:true,
+        label: "Association contact"
     },
     
     country:{
@@ -35,24 +36,28 @@ const associationSignUpFormConfig = {
         name:"country",
         placeholder:"Association country",
         required:true,
+        label: "Association country"
     },
     city:{
         type:"text",
         name:"city",
-        placeholder:"Association city",
+        placeholder:"Association state",
         required:true,
+        label: "Association state"
     },
     local_government:{
         type:"text",
         name:"local_government",
         placeholder:"Association local government",
         required:true,
+        label: "Association local government"
     },
     town: {
         type: "text",
         name: "town",
         placeholder: "Association town",
         required: true,
+        label: "Association town"
     },
 
     email: {
@@ -67,12 +72,14 @@ const associationSignUpFormConfig = {
         name: "password",
         placeholder: "Password",
         required: true,
+        label: "Association password"
     },
     confirm_password: {
         type: "password",
         name: "confirm_password",
         placeholder: "Confirm password",
         required: true,
+        label: "Confirm password"
     },
 
 }
