@@ -401,6 +401,49 @@ body{
 
 // =================================================================
 
+.breadcrumb{
+    background-color: $white;
+
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+
+    .back_icon{
+        width: 40px;
+        height:40px;
+        border-radius: 10px;
+        border: 1px solid $gray-200;
+        // background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $large +5;
+
+        margin: 0px 20px;
+        cursor: pointer;
+
+        transition: all 0.1s ease-out;
+
+        &:hover{
+            background-color: $primary;
+            color: $white;
+            border-color: transparent;
+        }
+    }
+    .left_side{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        // background-color: red;
+        
+        h4{
+            margin: 0 ;
+            font-size: $medium;
+        }
+    }
+}
+
 
 // Modal
 .modal_container{

@@ -1,9 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { getGroupByUrl } from '../app/accountSlice'
 import { getMembers } from '../app/memberSlice'
 import Section from '../components/Section'
 import Table from '../components/Table'
+import { homeUrl, newMemberUrl } from '../constants/app_urls'
 import { placeholder } from '../constants/assets'
 import Button from '../widgets/Button'
 
@@ -37,6 +39,7 @@ const Members = () => {
     ]
 
     const members = useSelector(getMembers);
+    const navigate = useNavigate()
 
     const membersLists = members.map((each)=>(
         [
@@ -60,7 +63,7 @@ const Members = () => {
                 title: "Association Members",
                 action:{
                     label:"Create new member",
-                    act: ()=>{}
+                    act: () => navigate(newMemberUrl)
                 }
             }}
         >
