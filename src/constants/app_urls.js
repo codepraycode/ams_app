@@ -3,4 +3,6 @@ const signUpUrl = '/signup';
 const signInUrl = '/signin';
 
 
-export { homeUrl, signInUrl, signUpUrl };
+const newMemberUrl =  '/members/new'
+
+export { homeUrl, signInUrl, signUpUrl, newMemberUrl };

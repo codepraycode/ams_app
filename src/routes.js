@@ -1,10 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { signInUrl, signUpUrl, homeUrl } from "./constants/app_urls";
+import { signInUrl, signUpUrl, homeUrl, newMemberUrl } from "./constants/app_urls";
 import Error400 from './errors/404.jsx';
 import AuthLayout from './layouts/AuthLayout';
 import DashboardLayout from './layouts/DashboardLayout';
+import BareLayout from './layouts/BareLayout';
 
 import Dashboard from './pages/Dashboard.jsx';
 import SignIn from "./pages/SignIn.jsx";
@@ -23,6 +24,15 @@ const AppRoutes = ()=>{
                 <Route path={'members'} exact element={<Members />} />
                 <Route path={'profile'} exact element={<Settings />} />
             </Route>
+
+            <Route 
+                path={newMemberUrl} 
+                element={
+                    <BareLayout>
+                        <UnderConstruction />
+                    </BareLayout>
+                } 
+            />
 
 
             <Route path={signInUrl} element={

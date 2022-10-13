@@ -1,25 +1,26 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import BreadCrumb from '../components/BreadCrumb';
 import TopBar from '../components/TopBar';
 
 
 
 
-const Dashboard = () => {
+const BareLayour = ({children}) => {
 
 
     return (
         <>
 
             <header>
-                <TopBar/>
-                <Navbar />
+                <TopBar />
+
+                <BreadCrumb/>
             </header>
 
             <main>
 
-                <Outlet/>
+                {children}
 
             </main>
         </>
@@ -29,4 +30,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default BareLayour;
