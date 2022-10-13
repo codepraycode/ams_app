@@ -127,6 +127,20 @@ const associationLevyFormConfig = {
     },
 
 }
+
+const TopupAccountFormConfig = {
+    
+    amount: {
+        type: "number",
+        name: "amount",
+        placeholder: "Enter an amount",
+        label:"Topup amount",
+        min:100,
+        required: true,
+    },
+
+}
+
 const associationLevyChargeFormConfig = {
     
     label: {
@@ -260,4 +274,5 @@ export {
     associationLevyFormConfig,
     associationLevyChargeFormConfig,
     associationMemberFormConfig,
+    TopupAccountFormConfig
 }

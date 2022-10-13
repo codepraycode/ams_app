@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LevyChargesLists from '../components/LevyChargesLists';
 import TransactionsLists from '../components/TransactionsLists';
@@ -9,11 +9,15 @@ import Button from '../widgets/Button';
 import FileUpload from '../widgets/FileUpload';
 import Form from '../widgets/Form';
 import Input from '../widgets/Input';
+import TopUpWallet from '../components/TopUpWallet';
 
 const Member = () => {
     const formConfig = associationMemberFormConfig;
 
     const { memberId } = useParams();
+
+    const [accountBalance, setAccountBalance] = useState(0);
+    const [showTopUp, setShowTopUp] = useState(false);
 
     const renderCharges = ()=>{
         if (!Boolean(memberId)) return null
@@ -30,6 +34,13 @@ const Member = () => {
     return (
         <>
 
+            {showTopUp && <TopUpWallet 
+                onClose={(amount=0)=>{
+                        setAccountBalance((prev)=> prev+amount)
+                        setShowTopUp(false)}
+                    }
+                />
+            }
         
             <Section
                 // header={{
@@ -64,16 +75,26 @@ const Member = () => {
 
                         </div>
 
-                        <div className="account_info gray" title='no account'>
+                        <div className={`account_info ${!Boolean(memberId) ? 'gray':''}`} title='no account'>
 
                             <p>
                                 <span>AccountID: 2341klkj23</span>
                                 <span>Record NO: 12345</span>
                             </p>
 
-                            <h3>#0.00</h3>
+                            <h3>#{parseFloat(accountBalance).toFixed(2)}</h3>
 
-                            <Button label={"Top up account"} variant="gradient full" size={""} />
+                            <Button 
+                                label={"Top up account"} 
+                                variant="gradient full" 
+                                size={""}
+                                onClick={()=>{
+                                    if (!Boolean(memberId)) return
+
+                                    setShowTopUp(true);
+
+                                }}
+                            />
                         </div>
                     </div>
 
