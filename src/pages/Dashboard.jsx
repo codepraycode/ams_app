@@ -41,6 +41,8 @@ const Dashboard = () => {
         <Groups/>
       </section>
 
+      <hr className='solid'/>
+
 
       {/* Levies charges tables */}
       <LevyChargesLists/>

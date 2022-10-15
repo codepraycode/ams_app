@@ -1071,9 +1071,16 @@ section {
 
 
 hr{
-    border-color: $gray-100 !important;
+    border-color: $gray-100;
     border-width: 1px;
     border-style: solid;
+
+
+    &.solid{
+        border-color: $gray-200;
+        display: block;
+        margin: 20px 0;
+    }
 }
 
 .avatar_pre{

@@ -43,6 +43,29 @@ const AssociationInvoices = ()=>{
     )
 }
 
+
+const AssociationInvoiceTrasactions = ()=>{
+    const headers = ['InvoceId', "Amount", "Date Paid", "Status",]
+
+    const content = [1, 2, 3, 4, 5].map((each, i) => {
+        return [
+            "#12dsa" + i, // ref
+            2000,
+            new Date().toDateString(), // Date
+            "Successful",
+        ]
+    })
+
+    return (
+        <Table
+            header={"Payments"}
+            tableHeadData={headers}
+            tableBodyData={content}
+        // checkable={true}
+        />
+    )
+}
+
 const Settings = () => {
     // const association = useSelector(getAccount);
 
@@ -104,13 +127,15 @@ const Settings = () => {
             </Section>
 
             <Section
-                // contentProps={{
-                //     className: "d-flex col-gap-1 row-gap-2 flex-sm-wrap",
-                // }}
+                contentProps={{
+                    className: "d-flex col-gap-1 row-gap-2 flex-sm-wrap",
+                }}
             >
 
 
                 <AssociationInvoices/>
+
+                <AssociationInvoiceTrasactions/>
 
             </Section>
         </>
