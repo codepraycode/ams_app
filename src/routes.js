@@ -14,6 +14,7 @@ import Members from './pages/Members';
 // import UnderConstruction from './errors/Construction';
 import Settings from './pages/Settings';
 import Member from './pages/Member';
+import LevyCharge from './pages/LevyCharge';
 
 
 const AppRoutes = ()=>{
@@ -39,6 +40,14 @@ const AppRoutes = ()=>{
                 element={
                     <BareLayout header="Member Profile">
                         <Member />
+                    </BareLayout>
+                } 
+            />
+            <Route 
+                path={homeUrl +"levy/:levyId"}
+                element={
+                    <BareLayout header="A Levy Name">
+                        <LevyCharge />
                     </BareLayout>
                 } 
             />

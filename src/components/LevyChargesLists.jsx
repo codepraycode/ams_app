@@ -6,11 +6,14 @@ import Section from './Section';
 import Table from './Table';
 
 import Button from '../widgets/Button';
+import { useNavigate } from 'react-router-dom';
 
 
 const LevyChargeItem = ({levy})=>{
 
     const {charges} = levy;
+
+    const navigate = useNavigate();
 
     const headers = ['Ref', "Amount", "Date", <>{" "}</>]
 
@@ -23,6 +26,9 @@ const LevyChargeItem = ({levy})=>{
             <Button
                 label="View"
                 variant={"solid center"}
+                onClick={
+                    () => navigate('/levy/123')
+                }
 
             />
         ]
@@ -77,7 +83,7 @@ const LevyChargesLists = ({ memberId }) => {
     return (
         <Section
             contentProps={{
-                className: "d-flex col-gap-2 row-gap-2 flex-wrap",
+                className: "d-flex col-gap-1 row-gap-2 flex-wrap",
             }}
         >
 
