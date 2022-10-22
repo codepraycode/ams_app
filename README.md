@@ -16,7 +16,7 @@ Features includes:
 - Member's account topup
 
 
-# App Structure (plan)
+# App Structure
 
 - `/signin` - Login page
 
@@ -37,16 +37,12 @@ Features includes:
     - charges that assigned to member
 
 - `/levy/levyId/` - Display created association levy charges
-
-- `/levy/levyId/charge/chargeId/` - Display Levy Charge info, and all members affected by the charge
     > On this page, a modal will be displayed to implement charge payment.
 
 - `/setting` - Display association info
     > This page will feature,
-    - Association info update,
-    - association payment
-    - association billing info
-    - association invoices
+    - Association info/update info,
+    - Association invoices
 
 
 # Data schema
@@ -106,3 +102,5 @@ Features includes:
 # How to install
 
 Make sure to have nodejs installed, then clone this repository, and run `yarn install` or  `npm install`.
+
+> run `npm start` or `yarn start` to start application.

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const BreadCrumb = () => {
+const BreadCrumb = ({header}) => {
 
     const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const BreadCrumb = () => {
                     <i className="fa fa-chevron-left" aria-hidden="true"></i>
                 </span>
 
-                <h4>Add Member</h4>
+                <h4>{header}</h4>
             </div>
 
         </div>

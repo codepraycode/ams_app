@@ -6,7 +6,7 @@ import TopBar from '../components/TopBar';
 
 
 
-const BareLayour = ({children}) => {
+const BareLayour = ({children, header}) => {
 
 
     return (
@@ -15,7 +15,7 @@ const BareLayour = ({children}) => {
             <header>
                 <TopBar />
 
-                <BreadCrumb/>
+                <BreadCrumb header={header}/>
             </header>
 
             <main>

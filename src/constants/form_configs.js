@@ -127,6 +127,40 @@ const associationLevyFormConfig = {
     },
 
 }
+
+const TopupAccountFormConfig = {
+    
+    amount: {
+        type: "number",
+        name: "amount",
+        placeholder: "Enter an amount",
+        label:"Topup amount",
+        min:100,
+        required: true,
+    },
+
+}
+const LevyChargePaymentFormConfig = {
+    
+    amount: {
+        type: "number",
+        name: "amount",
+        placeholder: "Enter an amount",
+        label:"Topup amount",
+        min:100,
+        required: true,
+    },
+    date: {
+        type: "date",
+        name: "date",
+        placeholder: "Enter date paid",
+        label:"Payment date",
+        // value: new Date().toISOString(),
+        required: true,
+    },
+
+}
+
 const associationLevyChargeFormConfig = {
     
     label: {
@@ -260,4 +294,6 @@ export {
     associationLevyFormConfig,
     associationLevyChargeFormConfig,
     associationMemberFormConfig,
+    TopupAccountFormConfig,
+    LevyChargePaymentFormConfig
 }

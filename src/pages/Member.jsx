@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import LevyChargesLists from '../components/LevyChargesLists';
+import TransactionsLists from '../components/TransactionsLists';
 import Section from '../components/Section';
 import { associationMemberFormConfig } from '../constants/form_configs';
 import UnderConstruction from '../errors/Construction';
@@ -6,117 +9,177 @@ import Button from '../widgets/Button';
 import FileUpload from '../widgets/FileUpload';
 import Form from '../widgets/Form';
 import Input from '../widgets/Input';
+import TopUpWallet from '../components/TopUpWallet';
 
 const Member = () => {
     const formConfig = associationMemberFormConfig;
 
+    const { memberId } = useParams();
+
+    const [accountBalance, setAccountBalance] = useState(0);
+    const [showTopUp, setShowTopUp] = useState(false);
+
+    const renderCharges = ()=>{
+        if (!Boolean(memberId)) return null
+
+        return <LevyChargesLists memberId={memberId} />
+    }
+
+    const renderTransactions = ()=>{
+        if (!Boolean(memberId)) return null
+
+        return <TransactionsLists memberId={memberId} />
+    }
+
     return (
-        <Section
-            // header={{
-            //     title: "Association Profile",
-            // }}
+        <>
 
-            wrapperProps={{
-                className: "profile_settings members"
-            }}
+            {showTopUp && <TopUpWallet 
+                onClose={(amount=0)=>{
+                        setAccountBalance((prev)=> prev+amount)
+                        setShowTopUp(false)}
+                    }
+                />
+            }
+        
+            <Section
+                // header={{
+                //     title: "Association Profile",
+                // }}
 
-            // contentProps={{
-            //     className: "profile_content"
-            // }}
-        >
+                wrapperProps={{
+                    className: "profile_settings members"
+                }}
 
-            <Form className="form profile_content text-left" onSubmit={(e) => { e.preventDefault(); }}>
-                <div className='d-flex col'>
+                // contentProps={{
+                //     className: "profile_content"
+                // }}
+            >
 
-
-
-                    <div className="profile_card grand">
-                        {/* <h4>Name and Registration ID</h4> */}
-
-
-                        <FileUpload
-                            inputProps={formConfig.passport}
-
-                            grand={true}
-                        />
+                <Form className="form profile_content text-left" onSubmit={(e) => { e.preventDefault(); }}>
+                    <div className='d-flex col'>
 
 
 
+                        <div className="profile_card grand">
+                            {/* <h4>Name and Registration ID</h4> */}
+
+
+                            <FileUpload
+                                inputProps={formConfig.passport}
+
+                                grand={true}
+                            />
+
+
+
+                        </div>
+
+                        <div className={`account_info ${!Boolean(memberId) ? 'gray':''}`} title='no account'>
+
+                            <p>
+                                <span>AccountID: 2341klkj23</span>
+                                <span>Record NO: 12345</span>
+                            </p>
+
+                            <h3>#{parseFloat(accountBalance).toFixed(2)}</h3>
+
+                            <Button 
+                                label={"Top up account"} 
+                                variant="gradient full" 
+                                size={""}
+                                onClick={()=>{
+                                    if (!Boolean(memberId)) return
+
+                                    setShowTopUp(true);
+
+                                }}
+                            />
+                        </div>
                     </div>
 
-                    <div className="account_info gray" title='no account'>
+                    <div className="grid-2">
+                        <div className="profile_card">
 
-                        <p>
-                            <span>AccountID: 2341klkj23</span>
-                            <span>Record NO: 12345</span>
-                        </p>
+                            <>
 
-                        <h3>#0.00</h3>
+                                <Input inputProps={formConfig.first_name} />
+                                <Input inputProps={formConfig.last_name} />
+                                <Input inputProps={formConfig.gender} />
+                                <Input inputProps={formConfig.occupation} />
 
-                        <Button label={"Top up account"} variant="gradient full" size={""} />
+                            </>
+                        </div>
+
+                        <div className="profile_card">
+
+                            <>
+
+                                <Input inputProps={formConfig.date_of_birth} />
+                                <Input inputProps={formConfig.religion} />
+                                <Input inputProps={formConfig.contact} />
+                                <Input inputProps={formConfig.email} />
+
+                            </>
+                        </div>
+
+                        <div className="profile_card">
+
+                            <>
+
+                                <Input inputProps={formConfig.local_government_of_origin} />
+                                <Input inputProps={formConfig.state_of_origin} />
+                                <Input inputProps={formConfig.ethnicity} />
+                                <Input inputProps={formConfig.nationality} />
+
+                            </>
+                        </div>
+
+                        <div className="profile_card">
+
+                            <>
+
+                                <Input inputProps={formConfig.next_of_kin} />
+                                <Input inputProps={formConfig.next_of_kin_contact} />
+                                <hr />
+                                <Input inputProps={formConfig.group} />
+                                <Input inputProps={formConfig.group_id} />
+
+                            </>
+                        </div>
                     </div>
-                </div>
 
-                <div className="grid-2">
-                    <div className="profile_card">
 
-                        <>
-
-                            <Input inputProps={formConfig.first_name} />
-                            <Input inputProps={formConfig.last_name} />
-                            <Input inputProps={formConfig.gender} />
-                            <Input inputProps={formConfig.occupation} />
-
-                        </>
+                    <div className="submit_btn">
+                        <Button label={memberId ?"Update account":"Create account"} variant="solid full" size={""} />
                     </div>
-
-                    <div className="profile_card">
-
-                        <>
-
-                            <Input inputProps={formConfig.date_of_birth} />
-                            <Input inputProps={formConfig.religion} />
-                            <Input inputProps={formConfig.contact} />
-                            <Input inputProps={formConfig.email} />
-
-                        </>
-                    </div>
-
-                    <div className="profile_card">
-
-                        <>
-
-                            <Input inputProps={formConfig.local_government_of_origin} />
-                            <Input inputProps={formConfig.state_of_origin} />
-                            <Input inputProps={formConfig.ethnicity} />
-                            <Input inputProps={formConfig.nationality} />
-
-                        </>
-                    </div>
-
-                    <div className="profile_card">
-
-                        <>
-
-                            <Input inputProps={formConfig.next_of_kin} />
-                            <Input inputProps={formConfig.next_of_kin_contact} />
-                            <hr />
-                            <Input inputProps={formConfig.group} />
-                            <Input inputProps={formConfig.group_id} />
-
-                        </>
-                    </div>
-                </div>
-
-
-                <div className="submit_btn">
-                    <Button label={"Create account"} variant="solid full" size={""} />
-                </div>
+                    
+                </Form>
                 
-            </Form>
-            
 
-        </Section>
+            </Section>
+
+            
+            {/* Charges */}
+
+            {
+                memberId && (
+                    <Section
+                        contentProps={{
+                            className: "d-flex col-gap-1 row-gap-2 flex-sm-wrap",
+                        }}
+                    >
+
+
+                        {renderCharges()}
+                        {renderTransactions()}
+
+                    </Section>
+                )
+            }
+            
+            
+        </>
     )
 }
 

@@ -4,6 +4,7 @@ import { getGroups } from '../app/accountSlice';
 import Section from './Section'
 import CreateGroup from './CreateGroup';
 import { Link } from 'react-router-dom';
+import { newMemberUrl } from '../constants/app_urls';
 
 function Groups() {
   const groups = useSelector(getGroups);
@@ -30,11 +31,8 @@ function Groups() {
                 <h2>{group.name}</h2>
 
                 <span>
-                  <Link to="/"
+                  <Link to={newMemberUrl}
                     title='Create a member in this group'
-                    onClick={(e) => {
-                      e.preventDefault();
-                    }}
                   >
                     Add member
                   </Link>

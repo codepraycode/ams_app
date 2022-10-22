@@ -1,30 +1,17 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { getGroupByUrl } from '../app/accountSlice'
+// import { getGroupByUrl } from '../app/accountSlice'
 import { getMembers } from '../app/memberSlice'
+import MemberErcept from '../components/MemberErcept'
+import MemberGroupErcept from '../components/MemberGroupErcept'
 import Section from '../components/Section'
 import Table from '../components/Table'
 import { homeUrl, newMemberUrl } from '../constants/app_urls'
-import { placeholder } from '../constants/assets'
 import Button from '../widgets/Button'
 
 
-const MemberErcept = ({member}) =>{
 
-    return <div className="avatar_pre">
-        <div className="avatar sm">
-            <img src={placeholder} alt="member image"/>
-        </div>
-        <span>{member.first_name} {member.last_name}</span>
-    </div>
-}
-
-const MemberGroupErcept = ({member}) =>{
-    const group = useSelector((state) => getGroupByUrl(state, member.group_url));
-
-    return <>{member.group_id}, {group?.name}</>
-}
 
 const Members = () => {
     const headers = [
@@ -32,8 +19,6 @@ const Members = () => {
         "Contact", 
         "Occupation", //
         "Group",
-        // "Ethnicity",
-        // "state_of_origin",
         "Date Added", // Date Joined,
         <>{" "}</>
     ]
@@ -52,7 +37,7 @@ const Members = () => {
             <Button
                 label="View Profile"
                 variant={"solid center"}
-
+                onClick={() => navigate(`${homeUrl}member/${each.id}`)}
             />
         ]
     ))

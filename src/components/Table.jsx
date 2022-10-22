@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../widgets/Button'
 
 const Table = ({header, size, tableHeadData, tableBodyData, checkable}) => {
     

@@ -6,11 +6,14 @@ import Section from './Section';
 import Table from './Table';
 
 import Button from '../widgets/Button';
+import { useNavigate } from 'react-router-dom';
 
 
 const LevyChargeItem = ({levy})=>{
 
     const {charges} = levy;
+
+    const navigate = useNavigate();
 
     const headers = ['Ref', "Amount", "Date", <>{" "}</>]
 
@@ -23,6 +26,9 @@ const LevyChargeItem = ({levy})=>{
             <Button
                 label="View"
                 variant={"solid center"}
+                onClick={
+                    () => navigate('/levy/123')
+                }
 
             />
         ]
@@ -38,15 +44,46 @@ const LevyChargeItem = ({levy})=>{
     )
 }
 
+const MemberLevyChargeItem = ()=>{
 
-const LevyChargesLists = () => {
+    const headers = ["Levy name", 'Ref', "Date Isuued", "Charge Amount", "Amount Paid", "Amount left",<>{" "}</>]
+
+    const content = [1,2,3,4,5].map((each,i)=>{
+        return [
+            "Security",
+            "#12dsa"+i+each.id, // ref
+            new Date().toDateString(), // Date
+            "2000", // Amount
+            "1000",
+            "1000",
+
+            <Button
+                label="Pay up"
+                variant={"solid center"}
+            />
+        ]
+    })
+
+    return (
+        <Table
+            header={"Levy Charges"}
+            tableHeadData={headers}
+            tableBodyData={content}
+        // checkable={true}
+        />
+    )
+}
+
+
+const LevyChargesLists = ({ memberId }) => {
     const levies = useSelector(getLevies);
 
+    if (Boolean(memberId)) return <MemberLevyChargeItem/>
 
     return (
         <Section
             contentProps={{
-                className: "d-flex col-gap-2 row-gap-2 flex-wrap",
+                className: "d-flex col-gap-1 row-gap-2 flex-wrap",
             }}
         >
 

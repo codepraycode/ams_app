@@ -10,10 +10,25 @@ import Input from '../widgets/Input.jsx';
 import Form from '../widgets/Form.jsx';
 import Button from '../widgets/Button.jsx';
 import ToggleSwitch from '../widgets/ToggleSwitch.jsx';
+import { useDispatch } from 'react-redux';
+import { updateSignIn } from '../app/accountSlice';
 
 const SignUp = () => {
 
   const navigate = useNavigate();
+
+  const storeDispatch = useDispatch();
+
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+
+    await storeDispatch(updateSignIn(true)).unwrap;
+
+    navigate(homeUrl);
+
+    return
+
+  }
 
   useEffect(()=>{
     const root = document.getElementById("root");
@@ -33,7 +48,7 @@ const SignUp = () => {
 
 
 
-      <Form className="form text-left" onSubmit={(e) => { e.preventDefault(); navigate(homeUrl) }}>
+      <Form className="form text-left" onSubmit={handleSubmit}>
 
         <Input
           inputProps={associationSignInFormConfig.email}

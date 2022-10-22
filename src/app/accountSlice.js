@@ -90,15 +90,19 @@ const initialState = {
                 }
             ]
         }
-    ]
+    ],
+
+    signedIn:false
 }
 
 const accountSlice = createSlice({
     name:"account",
     initialState,
     reducers:{
-        sample: (state,action)=>{
-            console.log("Hello world!");
+        updateSignIn: (state,action)=>{
+            state.signedIn = action.payload;
+
+            return state;
         }
     }
 });
@@ -106,9 +110,10 @@ const accountSlice = createSlice({
 
 // Actions
 // Add actions here
-
+export const { updateSignIn } = accountSlice.actions;
 
 // Selectors
+export const getAccountSignedIn = (state)=> state.account.signedIn;
 export const getAccount = (state)=> state.account.account;
 export const getGroups = (state)=> state.account.groups;
 export const getGroupByUrl = (state, url)=> state.account.groups.find(each=>each.url === url);
