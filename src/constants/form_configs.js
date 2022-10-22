@@ -142,7 +142,7 @@ const associationLevyChargeFormConfig = {
 
 const associationMemberFormConfig = {
     passport: {
-        type: "file",
+        type: "image",
         accept: ".png .jpg .jpeg",
         name: "passport",
         required: false,
@@ -192,6 +192,12 @@ const associationMemberFormConfig = {
         placeholder: "Contact",
         required: true,
     },
+    email: {
+        type: "email",
+        name: "email",
+        placeholder: "Member's email",
+        required: true,
+    },
 
     local_government_of_origin: {
         type: "text",
@@ -209,6 +215,12 @@ const associationMemberFormConfig = {
         type: "text",
         name: "ethnicity",
         placeholder: "Ethnicity",
+        required: true,
+    },
+    nationality: {
+        type: "text",
+        name: "nationality",
+        placeholder: "Member's nationality",
         required: true,
     },
 
@@ -233,8 +245,8 @@ const associationMemberFormConfig = {
     },
     group_id: {
         type: "text",
-        name: "group_id",
-        placeholder: "Group id",
+        name: "groupID",
+        placeholder: "Identification in selected group",
         required: true,
     },
 

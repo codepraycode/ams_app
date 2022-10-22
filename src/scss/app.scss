@@ -31,6 +31,8 @@ body{
 .auth_card{
 
     background-color: $white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
     width: 400px;
     max-width: 90%;
     margin: 30px auto;
@@ -98,6 +100,7 @@ body{
     padding: 2px 0;
     border: 1px solid $gray-200;
     border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
     input {
         display: none;
@@ -110,6 +113,7 @@ body{
         width: 80px;
         height: 80px;
         background-color: $gray-200;
+
         border-radius: 50%;
         padding: 5px;
 
@@ -930,8 +934,36 @@ section {
 }
 
 .profile_settings{
+
+    .profile_card {
     
-    .profile_content{
+        &:not(.grand) {
+            background-color: $white;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+
+        width: 400px;
+        max-width: 90%;
+
+        padding: 10px 15px;
+        border-radius: 10px;
+
+        .btn {
+            padding: 13px 30px;
+            margin: 0;
+        }
+
+        &.grand {
+            // align-items: center;
+            // background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+    
+    .profile_content:not(.members){
         // background-color: red;
         display: flex;
         // align-items: center;
@@ -939,34 +971,110 @@ section {
 
         flex-wrap: wrap;
 
-        .profile_card{
+       
+    }
 
-            &:not(.grand){
-                background-color: $white;
-            }
-            width: 400px;
-            max-width: 90%;
+    &.members{
+        
+        .profile_content{
+            display: grid;
+                grid-template-columns: auto auto;
+                gap: 10px;
 
-            padding: 10px 15px;
+        }
+
+        .account_info{
+            background-color: $white;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
             border-radius: 10px;
+            width: 320px;
+            padding: 10px 0;
+            p{
+                margin: 25px 0 10px 0;
+                font-size: $small;
+                color: $gray-600;
+                font-weight: bold;
 
-            .btn {
-                padding: 13px 30px;
-                margin: 0;
-            }
-
-            &.grand{
-                // align-items: center;
-                // background-color: red;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                // column-gap: 10px;
+                text-align: center;
+
+                span{
+                    display: block;
+                    text-align: center;
+                    position: relative;
+                    
+                    &:first-of-type{
+                        // color: red;
+                        margin-right: 20px;
+
+                        &::after{
+                            content: "·";
+                            position: absolute;
+                            font-size: 25px;
+                            top: -45%;
+                            right: -14px;
+                            color: $gray-500;
+                        }
+                    }
+                }
             }
             
+            
+            h3{
+                margin: 20px auto;
+                text-align: center;
+                font-size: $medium+10;
+            }
+
+            &.gray{
+                color: $gray-300 !important;
+                p{
+                    color: $gray-300 !important;
+                }
+
+                .btn{
+                    cursor: not-allowed;
+                    color: $gray-500 !important;
+                    background-color: $gray-300 !important;
+
+                    &:hover{
+                        background-color: inherit;
+                    }
+                }
+            }
         }
+        .col {
+            flex-direction: column;
+            align-items: center;
+            // background-color: green;
+            // justify-content: space-between;
+            row-gap: 20px;
+        }
+
+        .submit_btn{
+            position: relative;
+            top: -15vw;
+        }
+
     }
 }
+.grid-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 20px;
+    place-items: start center;
+}
 
+
+hr{
+    border-color: $gray-100 !important;
+    border-width: 1px;
+    border-style: solid;
+}
 
 .avatar_pre{
     display: flex;
@@ -1086,6 +1194,8 @@ section {
         min-width: 200px;
 
         background-color: $white;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
         display: flex;
         align-items:stretch;
         justify-content: end;
@@ -1286,14 +1396,42 @@ section {
         margin: 0 auto;
     }
 
-        // Modal
-        .modal_container {
-    
-            .modal_content {
-                min-width: 350px;
-            }
-    
+    // Modal
+    .modal_container {
+
+        .modal_content {
+            min-width: 350px;
         }
+
+    }
+
+        .profile_settings {
+
+    
+            &.members {
+    
+                .profile_content {
+                    display: grid;
+                    grid-template-columns: auto;
+                    row-gap: 20px;
+                    // place-items: center center;
+    
+                }
+
+                .submit_btn {
+                    position: static;
+                    // left: 30vw;
+                }
+    
+            }
+        }
+
+    .grid-2 {
+        // display: block;
+        grid-template-columns: auto;
+        
+        // row-gap: 20px;
+    }
 }
 
 @media (max-width:280px) {
